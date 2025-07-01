@@ -43,12 +43,12 @@ const Navbar = () => {
 
           {/* Desktop: Login & Subscribe */}
           <div className="hidden sm:flex gap-2 ml-auto">
-            <button className="px-4 py-2 text-sm font-medium text-[#B00020] hover:underline">
+           <Link href="/login"> <button className="px-4 py-2 text-sm font-medium text-[#B00020] hover:underline cursor-pointer">
               Login
-            </button>
-            <button className="px-4 py-2 bg-[#B00020] text-white rounded-md hover:bg-white hover:text-[#B00020] border border-[#B00020] transition">
+            </button></Link>
+            <Link href="/register"><button className="px-4 py-2 bg-[#B00020] text-white cursor-pointer rounded-md hover:bg-white hover:text-[#B00020] border border-[#B00020] transition">
               Subscribe
-            </button>
+            </button></Link>
           </div>
         </div>
 

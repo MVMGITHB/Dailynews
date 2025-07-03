@@ -1,7 +1,8 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Prata } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Header/Navbar";
 import Footer from "@/components/Header/Footer";
+import { AuthProvider } from "@/components/context/auth";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,20 +14,27 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const prata = Prata({
+  weight: "400", // ✅ fixed
+  subsets: ["latin"],
+  variable: "--font-prata",
+});
 export const metadata = {
-  title: "News website",
-  description: "Get Daily news",
+  title: "DailyNews",
+  description: "Get Latest News and Updates",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${prata.variable} antialiased`}
       >
-        <Navbar/>
+        <AuthProvider>
+        <Navbar />
         {children}
-        <Footer/>
+        <Footer />
+        </AuthProvider>
       </body>
     </html>
   );

@@ -29,7 +29,6 @@ function LatestNews({news}) {
                 ></div>
               </div>
 
-              {/* Text Content */}
               <div>
                 <p className="text-lg font-medium hover:underline cursor-pointer">
                   {item?.title}

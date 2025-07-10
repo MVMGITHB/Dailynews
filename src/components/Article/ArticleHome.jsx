@@ -5,6 +5,7 @@ import { base_url } from "../Helper/helper";
 import LatestNews from "../Hero/LatestNews";
 import Missed from "../HeroSection/Missed";
 import axios from "axios";
+import TataPopup from "../popup/tataneu";
 
 export const ArticleHome = ({ data }) => {
   const [news, setNews] = useState();
@@ -30,6 +31,25 @@ export const ArticleHome = ({ data }) => {
   return (
     <div className="w-full px-4 py-6 bg-gray-50">
       {/* Main Grid Layout */}
+        {
+  data?.images?.[0] && data?.images?.[1] ? (
+    <TataPopup
+      link={data?.linkArray?.[0]}
+      desImg={`${base_url}${data.images[0]}`}
+      mobIg={`${base_url}${data.images[1]}`}
+    />
+  ) : null
+}
+
+  {
+  data?.images?.[0] && !data?.images?.[1] ? (
+    <TataPopup
+      link={data?.linkArray?.[0]}
+      desImg={`${base_url}${data.images[0]}`}
+      mobIg={`${base_url}${data.images[0]}`}
+    />
+  ) : null
+}
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Main Content */}
         <div className="md:col-span-2 space-y-6">

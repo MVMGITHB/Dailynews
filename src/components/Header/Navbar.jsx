@@ -9,9 +9,9 @@ import { useAuth } from "../context/auth";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-const [auth, setAuth] = useAuth();
+  const [auth, setAuth] = useAuth();
   const handleLogout = () => {
-    setAuth({ ...auth, user: null, token: ""});
+    setAuth({ ...auth, user: null, token: "" });
     localStorage.removeItem("auth");
   };
 
@@ -19,7 +19,6 @@ const [auth, setAuth] = useAuth();
     <>
       <nav className="w-full bg-[#FFFFF0] shadow-md">
         <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between relative">
-          
           <div className="hidden sm:block">
             <DayDate />
           </div>
@@ -30,14 +29,13 @@ const [auth, setAuth] = useAuth();
             </Link>
             <button
               className="text-2xl text-[#B00020]"
-              onClick={() => setMenuOpen((prev) => !prev)}      
+              onClick={() => setMenuOpen((prev) => !prev)}
               aria-label="Toggle Menu"
-            >           
+            >
               {menuOpen ? <IoIosClose /> : <IoIosMenu />}
             </button>
           </div>
 
-          
           <div className="hidden sm:block sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2">
             <Link href="/">
               <h1 className="text-xl font-bold">MyLogo</h1>
@@ -45,32 +43,32 @@ const [auth, setAuth] = useAuth();
           </div>
 
           <div className="hidden sm:flex gap-2 ml-auto">
-               {auth?.user ? (
-    <>
-        <button className="px-4 py-2 text-sm font-medium text-[#B00020] hover:underline cursor-pointer uppercase">
-          {auth?.user?.name}
-        </button>
-      <button
-        onClick={handleLogout}
-        className="px-4 py-2 bg-[#B00020] text-white cursor-pointer rounded-md hover:bg-white hover:text-[#B00020] border border-[#B00020] transition"
-      >
-        Logout
-      </button>
-    </>
-  ) : (
-    <>
-      <Link href="/login">
-        <button className="px-4 py-2 text-sm font-medium text-[#B00020] hover:underline cursor-pointer">
-          Login
-        </button>
-      </Link>
-      <Link href="/register">
-        <button className="px-4 py-2 bg-[#B00020] text-white cursor-pointer rounded-md hover:bg-white hover:text-[#B00020] border border-[#B00020] transition">
-          Subscribe
-        </button>
-      </Link>
-    </>
-  )}
+            {auth?.user ? (
+              <>
+                <button className="px-4 py-2 text-sm font-medium text-[#B00020] hover:underline cursor-pointer uppercase">
+                  {auth?.user?.name}
+                </button>
+                <button
+                  onClick={handleLogout}
+                  className="px-4 py-2 bg-[#B00020] text-white cursor-pointer rounded-md hover:bg-white hover:text-[#B00020] border border-[#B00020] transition"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <Link href="/login">
+                  <button className="px-4 py-2 text-sm font-medium text-[#B00020] hover:underline cursor-pointer">
+                    Login
+                  </button>
+                </Link>
+                <Link href="/register">
+                  <button className="px-4 py-2 bg-[#B00020] text-white cursor-pointer rounded-md hover:bg-white hover:text-[#B00020] border border-[#B00020] transition">
+                    Subscribe
+                  </button>
+                </Link>
+              </>
+            )}
           </div>
         </div>
 
@@ -88,32 +86,32 @@ const [auth, setAuth] = useAuth();
                 Subscribe
               </button> */}
 
-               {auth?.user ? (
-    <>
-        <button className="px-4 py-2 text-sm font-medium text-[#B00020] hover:underline cursor-pointer uppercase">
-          {auth?.user?.name}
-        </button>
-      <button
-        onClick={handleLogout}
-        className="px-4 py-2 bg-[#B00020] text-white cursor-pointer rounded-md hover:bg-white hover:text-[#B00020] border border-[#B00020] transition"
-      >
-        Logout
-      </button>
-    </>
-  ) : (
-    <>
-      <Link href="/login">
-        <button className="px-4 py-2 text-sm font-medium text-[#B00020] hover:underline cursor-pointer">
-          Login
-        </button>
-      </Link>
-      <Link href="/register">
-        <button className="px-4 py-2 bg-[#B00020] text-white cursor-pointer rounded-md hover:bg-white hover:text-[#B00020] border border-[#B00020] transition">
-          Subscribe
-        </button>
-      </Link>
-    </>
-  )}
+              {auth?.user ? (
+                <>
+                  <button className="px-4 py-2 text-sm font-medium text-[#B00020] hover:underline cursor-pointer uppercase">
+                    {auth?.user?.name}
+                  </button>
+                  <button
+                    onClick={handleLogout}
+                    className="px-4 py-2 bg-[#B00020] text-white cursor-pointer rounded-md hover:bg-white hover:text-[#B00020] border border-[#B00020] transition"
+                  >
+                    Logout
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link href="/login">
+                    <button className="px-4 py-2 text-sm font-medium text-[#B00020] hover:underline cursor-pointer">
+                      Login
+                    </button>
+                  </Link>
+                  <Link href="/register">
+                    <button className="px-4 py-2 bg-[#B00020] text-white cursor-pointer rounded-md hover:bg-white hover:text-[#B00020] border border-[#B00020] transition">
+                      Subscribe
+                    </button>
+                  </Link>
+                </>
+              )}
             </div>
             <Categories />
           </div>

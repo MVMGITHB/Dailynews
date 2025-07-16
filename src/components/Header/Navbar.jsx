@@ -25,7 +25,7 @@ const Navbar = () => {
 
           <div className="w-full flex justify-between items-center sm:hidden">
             <Link href="/">
-              <h1 className="text-xl font-bold">MyLogo</h1>
+            <img src="/logo.png" alt="" className="w-14 h-14 object-cover" />
             </Link>
             <button
               className="text-2xl text-[#B00020]"
@@ -38,7 +38,7 @@ const Navbar = () => {
 
           <div className="hidden sm:block sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2">
             <Link href="/">
-              <h1 className="text-xl font-bold">MyLogo</h1>
+            <img src="/logo.png" alt="" className="w-28 h-28 object-cover" />
             </Link>
           </div>
 

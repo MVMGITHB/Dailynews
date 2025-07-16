@@ -73,9 +73,9 @@ export const ArticleHome = ({ data }) => {
           <div className="space-y-4 text-gray-800 text-base md:text-lg leading-relaxed">
             {typeof data?.content === "string" && (
               <div
-                id="artice-main"
+                id="article-main"
                 dangerouslySetInnerHTML={{ __html: data.content }}
-                className="article"
+                className="prose blog-content"
               />
             )}
           </div>

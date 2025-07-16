@@ -19,4 +19,24 @@ body {
 font-family: "Prata", serif;
 }
 
+table {
 
+  /* display: block; */
+
+  overflow-x: auto;
+
+  white-space: nowrap;
+
+  max-width: 100%;
+
+}
+
+.blog-content table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.blog-content a {
+  color: blue;
+}

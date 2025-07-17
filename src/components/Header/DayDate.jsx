@@ -11,7 +11,7 @@ const DayDate = () => {
   const formattedDate = `${weekday}, ${day} ${month}, ${year}`;
   // Output: "Monday, 23 June, 2025"
 
-  return <p className="font-bold">{formattedDate}</p>;
+  return <p className="font-bold text-xl">{formattedDate}</p>;
 };
 
 export default DayDate;

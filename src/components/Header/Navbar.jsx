@@ -18,14 +18,20 @@ const Navbar = () => {
   return (
     <>
       <nav className="w-full bg-[#FFFFFF] shadow-md">
-        <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center justify-between relative">
-          <div className="hidden sm:block">
+        <div className="max-w-7xl mx-auto px-4  flex flex-col sm:flex-row items-center justify-between relative">
+          {/* <div className="hidden sm:block">
             <DayDate />
+          </div> */}
+              <div className="hidden sm:block">
+
+           <Link href="/">
+            <img src="/logo.png" alt="" className="w-36 h-28 object-cover" />
+            </Link>
           </div>
 
-          <div className="w-full flex justify-between items-center sm:hidden">
+          <div className="w-full flex justify-between items-center sm:hidden py-3">
             <Link href="/">
-            <img src="/logo.png" alt="" className="w-14 h-14 object-cover" />
+            <img src="/logo.png" alt="" className="w-20 h-14 object-cover" />
             </Link>
             <button
               className="text-2xl text-[#B00020]"
@@ -37,9 +43,13 @@ const Navbar = () => {
           </div>
 
           <div className="hidden sm:block sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2">
-            <Link href="/">
+            {/* <Link href="/">
             <img src="/logo.png" alt="" className="w-28 h-28 object-cover" />
-            </Link>
+            </Link> */}
+
+              <div className="hidden sm:block">
+            <DayDate />
+          </div>
           </div>
 
           <div className="hidden sm:flex gap-2 ml-auto">
@@ -72,9 +82,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="hidden sm:block">
-          <Categories />
-        </div>
+        
 
         {menuOpen && (
           <div className="sm:hidden px-4 pb-4 space-y-4 animate-slide-down">
@@ -116,7 +124,11 @@ const Navbar = () => {
             <Categories />
           </div>
         )}
+
       </nav>
+      <div className="hidden sm:block w-full bg-[#ffffff79] ">
+          <Categories />
+        </div>
     </>
   );
 };

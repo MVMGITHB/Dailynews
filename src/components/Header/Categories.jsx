@@ -22,10 +22,12 @@ function Categories() {
         "
       >
         {categories.map((cat, index) => (
-          <li key={index}>
+          <li key={index}
+           className={`pl-4 ${index !== 0 ? "border-l border-gray-300" : ""}`}
+          >
             <Link
               href={`/${cat.toLowerCase()}`}
-              className="text-base md:text-lg font-semibold text-gray-600 hover:text-[#B00020] transition-colors"
+              className="text-base md:text-xl font-semibold text-gray-600 hover:text-[#B00020] transition-colors"
             >
               {cat}
             </Link>

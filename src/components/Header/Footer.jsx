@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
@@ -9,6 +10,9 @@ const Footer = () => {
         {/* Logo & Description */}
         <div>
           {/* <h2 className="text-2xl font-bold text-gray-800 hover:text-[#B00020] transition-colors mb-2">YourLogo</h2> */}
+           <Link href="/">
+                      <img src="/logo.png" alt="" className="w-28 h-28 object-cover" />
+                      </Link>
           <p className="text-sm">
             Delivering trusted updates, top stories, and expert analysis for a
             better-informed audience.

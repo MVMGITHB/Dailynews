@@ -11,7 +11,6 @@ function Categories() {
     "Sports",
     "Fashion",
     "Food",
-    "Business",
   ];
 
   return (

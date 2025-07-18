@@ -79,6 +79,11 @@ export const ArticleHome = ({ data }) => {
               />
             )}
           </div>
+
+          <div>
+            <h3 className=" text-xl md:text-3xl font-bold text-gray-900 text-center">Conclusion</h3>
+            <p className=" text-gray-800 text-base md:text-xl leading-relaxed">{data?.conclusion}</p>
+          </div>
         </div>
 
         {/* Sticky Sidebar */}

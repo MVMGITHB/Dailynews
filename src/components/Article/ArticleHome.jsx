@@ -67,7 +67,7 @@ export const ArticleHome = ({ data }) => {
               minute: "2-digit",
               hour12: true,
               timeZone: "Asia/Kolkata",
-            }).format(new Date(data?.createdAt))}{" "}
+            }).format(new Date(data?.createdAt))}
           </div>
 
           <div className="space-y-4 text-gray-800 text-base md:text-lg leading-relaxed">
@@ -81,8 +81,17 @@ export const ArticleHome = ({ data }) => {
           </div>
 
           <div>
-            <h3 className=" text-xl md:text-3xl font-bold text-gray-900 text-center">Conclusion</h3>
-            <p className=" text-gray-800 text-base md:text-xl leading-relaxed">{data?.conclusion}</p>
+           {data?.conclusion && data?.conclusion.length > 0 && (
+  <div>
+    <h3 className="text-xl md:text-3xl font-bold text-gray-900 text-center">
+      Conclusion
+    </h3>
+    <p className="text-gray-800 text-base md:text-xl leading-relaxed">
+      {data.conclusion}
+    </p>
+  </div>
+)}
+
           </div>
         </div>
 

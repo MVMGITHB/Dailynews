@@ -30,7 +30,7 @@ const Home = () => {
         <div className=" md:col-span-1">
            <a href="https://trk.clickgenie.in/click?campaign_id=34900&pub_id=5743&p1=%7Byour-transaction-id%7D&source=%7Byour-sub-aff-id%7D" target="_blank" rel="noopener noreferrer">
             <img
-              src="https://mvmbs.com/images/tata_side_image.webp"
+              src="/images/Tataneu.png"
               alt="Ad"
               className="mt-4 rounded"
             />
@@ -63,7 +63,7 @@ const Home = () => {
           </div>
           <a href="https://trk.clickgenie.in/click?campaign_id=34900&pub_id=5743&p1=%7Byour-transaction-id%7D&source=%7Byour-sub-aff-id%7D" target="_blank" rel="noopener noreferrer" >
             <img
-              src="https://mvmbs.com/images/tata_side_image.webp"
+              src="/images/Tataneu.png"
               alt="Ad"
               className="mt-4 rounded"
             />

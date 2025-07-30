@@ -52,13 +52,13 @@ export const ArticleHome = ({ data }) => {
           <div className="flex flex-col gap-4">
             <a href="https://trk.clickgenie.in/click?campaign_id=34900&pub_id=5743&p1=%7Byour-transaction-id%7D&source=%7Byour-sub-aff-id%7D" target="_blank" rel="noopener noreferrer">
               <img
-                src="https://mvmbs.com/images/tata_side_image.webp"
+                src="/images/Tataneu.png"
                 alt="Ad"
                 className="mt-4 rounded"
               />
             </a>
             <TopPicks news={news} />
-            
+
           </div>
         </div>
 
@@ -120,7 +120,7 @@ export const ArticleHome = ({ data }) => {
           <TopPicks news={news} />
           <a href="https://trk.clickgenie.in/click?campaign_id=34900&pub_id=5743&p1=%7Byour-transaction-id%7D&source=%7Byour-sub-aff-id%7D" target="_blank" rel="noopener noreferrer">
             <img
-              src="https://mvmbs.com/images/tata_side_image.webp"
+              src="/images/Tataneu.png"
               alt="Ad"
               className="mt-4 rounded"
             />
@@ -129,7 +129,7 @@ export const ArticleHome = ({ data }) => {
           <LatestNews news={news} />
           <a href="https://trk.clickgenie.in/click?campaign_id=34900&pub_id=5743&p1=%7Byour-transaction-id%7D&source=%7Byour-sub-aff-id%7D" target="_blank" rel="noopener noreferrer">
             <img
-              src="https://mvmbs.com/images/tata_side_image.webp"
+              src="/images/Tataneu.png"
               alt="Ad"
               className="mt-4 rounded"
             />
@@ -143,7 +143,7 @@ export const ArticleHome = ({ data }) => {
             <LatestNews news={news} />
             <a href="https://trk.clickgenie.in/click?campaign_id=34900&pub_id=5743&p1=%7Byour-transaction-id%7D&source=%7Byour-sub-aff-id%7D" target="_blank" rel="noopener noreferrer">
               <img
-                src="https://mvmbs.com/images/tata_side_image.webp"
+                src="/images/Tataneu.png"
                 alt="Ad"
                 className="mt-4 rounded"
               />

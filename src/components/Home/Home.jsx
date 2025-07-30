@@ -26,7 +26,15 @@ const Home = () => {
     <>
       <div className="w-full mx-auto px-4 py-6 grid grid-cols-1 md:grid-cols-4 gap-6">
         {/* Left - Top Picks */}
+        
         <div className=" md:col-span-1">
+           <a href="https://trk.clickgenie.in/click?campaign_id=34900&pub_id=5743&p1=%7Byour-transaction-id%7D&source=%7Byour-sub-aff-id%7D" target="_blank" rel="noopener noreferrer">
+            <img
+              src="https://mvmbs.com/images/tata_side_image.webp"
+              alt="Ad"
+              className="mt-4 rounded"
+            />
+          </a>
           <TopPicks news={news} />
 
           {/* Three Horizontal Lines Below */}
@@ -35,13 +43,7 @@ const Home = () => {
             <hr className="h-px bg-gray-400 border-0" />
             <hr className="h-px bg-gray-400 border-0" />
           </div>
-          <a href="https://trk.clickgenie.in/click?campaign_id=34900&pub_id=5743&p1=%7Byour-transaction-id%7D&source=%7Byour-sub-aff-id%7D" target="_blank" rel="noopener noreferrer">
-            <img
-              src="https://mvmbs.com/images/tata_side_image.webp"
-              alt="Ad"
-              className="mt-4 rounded"
-            />
-          </a>
+         
 
         </div>
 

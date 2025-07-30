@@ -10,11 +10,11 @@ function LatestNews({ news }) {
 
       <div className="relative ml-6">
         <div className="absolute top-0 left-1.5 w-px h-full bg-gray-300 z-0"></div>
-        
+
         <div className="flex flex-col gap-6">
           {news
             ?.slice(0)
-            ?.sort(() => Math.random() - 0.5)
+            ?.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)) // newest first
             ?.slice(0, 5)
             ?.map((item, index) => (
               <Link

@@ -50,7 +50,6 @@ export const ArticleHome = ({ data }) => {
         {/* Left Sidebar */}
         <div className="hidden md:block   md:col-span-3 h-fit sticky top-10">
           <div className="flex flex-col gap-4">
-            <TopPicks news={news} />
             <a href="https://trk.clickgenie.in/click?campaign_id=34900&pub_id=5743&p1=%7Byour-transaction-id%7D&source=%7Byour-sub-aff-id%7D" target="_blank" rel="noopener noreferrer">
               <img
                 src="https://mvmbs.com/images/tata_side_image.webp"
@@ -58,6 +57,8 @@ export const ArticleHome = ({ data }) => {
                 className="mt-4 rounded"
               />
             </a>
+            <TopPicks news={news} />
+            
           </div>
         </div>
 
@@ -117,22 +118,22 @@ export const ArticleHome = ({ data }) => {
         <div className="block md:hidden space-y-6">
 
           <TopPicks news={news} />
-           <a href="https://trk.clickgenie.in/click?campaign_id=34900&pub_id=5743&p1=%7Byour-transaction-id%7D&source=%7Byour-sub-aff-id%7D" target="_blank" rel="noopener noreferrer">
-              <img
-                src="https://mvmbs.com/images/tata_side_image.webp"
-                alt="Ad"
-                className="mt-4 rounded"
-              />
-            </a>
+          <a href="https://trk.clickgenie.in/click?campaign_id=34900&pub_id=5743&p1=%7Byour-transaction-id%7D&source=%7Byour-sub-aff-id%7D" target="_blank" rel="noopener noreferrer">
+            <img
+              src="https://mvmbs.com/images/tata_side_image.webp"
+              alt="Ad"
+              className="mt-4 rounded"
+            />
+          </a>
 
           <LatestNews news={news} />
-           <a href="https://trk.clickgenie.in/click?campaign_id=34900&pub_id=5743&p1=%7Byour-transaction-id%7D&source=%7Byour-sub-aff-id%7D" target="_blank" rel="noopener noreferrer">
-              <img
-                src="https://mvmbs.com/images/tata_side_image.webp"
-                alt="Ad"
-                className="mt-4 rounded"
-              />
-            </a>
+          <a href="https://trk.clickgenie.in/click?campaign_id=34900&pub_id=5743&p1=%7Byour-transaction-id%7D&source=%7Byour-sub-aff-id%7D" target="_blank" rel="noopener noreferrer">
+            <img
+              src="https://mvmbs.com/images/tata_side_image.webp"
+              alt="Ad"
+              className="mt-4 rounded"
+            />
+          </a>
         </div>
 
 

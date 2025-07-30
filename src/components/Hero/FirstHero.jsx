@@ -12,7 +12,7 @@ const FirstHero = ({news}) => {
   const fourthArticle=news[3];
 
   return (
-    <div className="max-w-4xl mx-auto px-2 md:px-6 py-6">
+    <div className="max-w-4xl mx-auto px-2  py-6">
       {/* Vertical borders on left and right */}
       <div className="border-l border-r border-gray-300 p-4">
 

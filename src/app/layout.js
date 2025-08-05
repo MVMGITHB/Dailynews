@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Header/Navbar";
 import Footer from "@/components/Header/Footer";
 import { AuthProvider } from "@/components/context/auth";
+import BreadcrumbSchema from "@/components/Seo/breadcrumb";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,9 +32,12 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} ${prata.variable} antialiased`}
       >
         <AuthProvider>
-        <Navbar />
-        {children}
-        <Footer />
+          <div className="flex flex-col min-h-screen">
+            <Navbar />
+            <BreadcrumbSchema />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+          </div>
         </AuthProvider>
       </body>
     </html>

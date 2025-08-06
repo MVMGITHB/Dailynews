@@ -29,14 +29,17 @@ function NewsUi({ url }) {
     <>
       {/* Section Header */}
       <div className="w-full flex items-center justify-center px-4 py-6 gap-4">
-    
         <div className="flex flex-col justify-center gap-1 w-full">
           <hr className="h-px bg-gray-400 border-0 w-full" />
           <hr className="h-px bg-gray-400 border-0 w-full" />
           <hr className="h-px bg-gray-400 border-0 w-full" />
         </div>
 
-        <h3 className="text-2xl font-bold text-[#B00020]">{heading}</h3>
+        <h1 className="text-2xl md:text-3xl font-bold text-[#B00020] text-center">
+          {heading
+            ? `Latest ${heading} News, Updates & Highlights - SuperNPro`
+            : "Latest Sports News - SuperNPro"}
+        </h1>
 
         {/* Right Lines */}
         <div className="flex flex-col justify-center gap-1 w-full">
@@ -45,7 +48,7 @@ function NewsUi({ url }) {
           <hr className="h-px bg-gray-400 border-0 w-full" />
         </div>
       </div>
-  <div className="max-w-7xl mx-auto px-4 py-6">
+      <div className="max-w-7xl mx-auto px-4 py-6">
         {card && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {card.map((blog, index) => (

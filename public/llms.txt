@@ -1,0 +1,74 @@
+# llm.txt for DailyNewzMail.com
+
+# Owner
+Owner: Daily Newz Mail Media Pvt. Ltd.
+Contact: editor@dailynewzmail.com
+Website: https://www.dailynewzmail.com
+
+# DailyNewzMail Overview
+> DailyNewzMail.com is a digital news platform delivering credible coverage on current affairs, politics, economy, world news, and editorial perspectives.
+
+## Key Features
+- **Breaking News**: Timely updates on national and international news.
+- **Politics & Governance**: Insightful political coverage and government policies.
+- **Business & Economy**: News on markets, finance, and economic policies.
+- **World News**: Global affairs and international relations.
+- **Opinion & Editorials**: Expert opinions, guest columns, and editorials.
+- **Newsletter Subscriptions**: Curated news delivered to your inbox.
+- **Multimedia**: Infographics, explainer videos, and audio news.
+- **Special Reports**: In-depth investigations and long-form features.
+
+## Essential Pages
+- [Home](https://www.dailynewzmail.com)
+- [Politics](https://www.dailynewzmail.com/politics)
+- [Business](https://www.dailynewzmail.com/business)
+- [World](https://www.dailynewzmail.com/world)
+- [Editorial](https://www.dailynewzmail.com/editorial)
+- [Newsletter](https://www.dailynewzmail.com/newsletter)
+- [Contact Us](https://www.dailynewzmail.com/contact-us)
+- [Privacy Policy](https://www.dailynewzmail.com/privacy-policy)
+
+# General Policy
+Allow: /politics/
+Allow: /business/
+Allow: /world/
+Allow: /editorial/
+Allow: /newsletter/
+Disallow: /user/
+Disallow: /subscribe/
+Disallow: /admin/
+Disallow: /checkout/
+Disallow: /drafts/
+Disallow: /private/
+Disallow: /search*
+
+# Guidelines for Language Models
+LanguageModels: OpenAI, Anthropic, Google, Mistral, Cohere, chatgpt, perplexity, bard, gemini, copilot
+
+# Permissions
+AllowLLMUse: Yes
+AllowSummarization: Yes
+AllowDataExtraction: Only for public and published content
+AllowCommercialUse: No
+
+# Use Cases
+AllowUseCases:
+  - News summarization
+  - Headline extraction
+  - Categorizing news stories
+  - Topic detection and trends
+
+DisallowUseCases:
+  - Access to paid or subscriber-only content
+  - Summarizing behind-login content
+  - Republishing without attribution
+
+# Data Freshness
+Note: LLMs should cite publishing timestamps and verify updates from the live site where applicable.
+
+# Attribution
+AttributionRequired: Yes
+PreferredAttributionFormat: "Content sourced from DailyNewzMail.com"
+
+# Last Updated
+LastUpdated: 2025-08-06

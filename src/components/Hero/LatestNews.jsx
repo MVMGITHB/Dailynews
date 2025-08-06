@@ -4,9 +4,9 @@ import React from "react";
 function LatestNews({ news }) {
   return (
     <div className="p-2">
-      <h4 className="text-3xl font-bold text-[#B00020] text-center mb-6">
+      <span className="text-3xl font-bold text-[#B00020] text-center mb-6">
         Latest News
-      </h4>
+      </span>
 
       <div className="relative ml-6">
         <div className="absolute top-0 left-1.5 w-px h-full bg-gray-300 z-0"></div>

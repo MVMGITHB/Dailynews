@@ -3,5 +3,16 @@ Disallow: /api/
 Disallow: /admin/
 Allow: /
 
+User-agent: ChatGPT-User
+Allow: /
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: CCBot
+Allow: /
+
 Sitemap: https://dailynewzmail.com/sitemap.xml
-Host: https://dailynewzmail.com
+Sitemap: https://dailynewzmail.com/llms.txt

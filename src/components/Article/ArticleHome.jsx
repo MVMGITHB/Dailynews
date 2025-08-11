@@ -5,7 +5,7 @@ import { base_url } from "../Helper/helper";
 import LatestNews from "../Hero/LatestNews";
 import Missed from "../HeroSection/Missed";
 import axios from "axios";
-import TataPopup from "../popup/tataneu";
+// import TataPopup from "../popup/tataneu";
 import TopPicks from "../Hero/TopPicks";
 
 export const ArticleHome = ({ data }) => {
@@ -26,7 +26,7 @@ export const ArticleHome = ({ data }) => {
 
   return (
     <div className="w-full py-6 bg-gray-50 ">
-      {/* Tata Popup */}
+      {/* Tata Popup
       {data?.images?.[0] && data?.images?.[1] ? (
         <TataPopup
           link={data?.linkArray?.[0]}
@@ -41,7 +41,7 @@ export const ArticleHome = ({ data }) => {
           desImg={`${base_url}${data.images[0]}`}
           mobIg={`${base_url}${data.images[0]}`}
         />
-      ) : null}
+      ) : null} */}
 
       {/* Grid Layout */}
       <div className="max-w-[1600px] px-4 md:px-6 mx-auto grid grid-cols-1 md:grid-cols-12 gap-6">

@@ -50,13 +50,13 @@ export const ArticleHome = ({ data }) => {
         {/* Left Sidebar */}
         <div className="hidden md:block   md:col-span-3 h-fit sticky top-10">
           <div className="flex flex-col gap-4">
-            <a href="https://trk.clickgenie.in/click?campaign_id=34900&pub_id=5743&p1=%7Byour-transaction-id%7D&source=%7Byour-sub-aff-id%7D" target="_blank" rel="noopener noreferrer">
+            {/* <a href="https://trk.clickgenie.in/click?campaign_id=34900&pub_id=5743&p1=%7Byour-transaction-id%7D&source=%7Byour-sub-aff-id%7D" target="_blank" rel="noopener noreferrer">
               <img
                 src="/images/Tataneu.png"
                 alt="Ad"
                 className="mt-4 rounded"
               />
-            </a>
+            </a> */}
             <TopPicks news={news} />
 
           </div>
@@ -118,22 +118,22 @@ export const ArticleHome = ({ data }) => {
         <div className="block md:hidden space-y-6">
 
           <TopPicks news={news} />
-          <a href="https://trk.clickgenie.in/click?campaign_id=34900&pub_id=5743&p1=%7Byour-transaction-id%7D&source=%7Byour-sub-aff-id%7D" target="_blank" rel="noopener noreferrer">
+          {/* <a href="https://trk.clickgenie.in/click?campaign_id=34900&pub_id=5743&p1=%7Byour-transaction-id%7D&source=%7Byour-sub-aff-id%7D" target="_blank" rel="noopener noreferrer">
             <img
               src="/images/Tataneu.png"
               alt="Ad"
               className="mt-4 rounded"
             />
-          </a>
+          </a> */}
 
           <LatestNews news={news} />
-          <a href="https://trk.clickgenie.in/click?campaign_id=34900&pub_id=5743&p1=%7Byour-transaction-id%7D&source=%7Byour-sub-aff-id%7D" target="_blank" rel="noopener noreferrer">
+          {/* <a href="https://trk.clickgenie.in/click?campaign_id=34900&pub_id=5743&p1=%7Byour-transaction-id%7D&source=%7Byour-sub-aff-id%7D" target="_blank" rel="noopener noreferrer">
             <img
               src="/images/Tataneu.png"
               alt="Ad"
               className="mt-4 rounded"
             />
-          </a>
+          </a> */}
         </div>
 
 
@@ -141,13 +141,13 @@ export const ArticleHome = ({ data }) => {
         <div className="hidden md:block  md:col-span-3 h-fit sticky top-10">
           <div className="flex flex-col gap-4">
             <LatestNews news={news} />
-            <a href="https://trk.clickgenie.in/click?campaign_id=34900&pub_id=5743&p1=%7Byour-transaction-id%7D&source=%7Byour-sub-aff-id%7D" target="_blank" rel="noopener noreferrer">
+            {/* <a href="https://trk.clickgenie.in/click?campaign_id=34900&pub_id=5743&p1=%7Byour-transaction-id%7D&source=%7Byour-sub-aff-id%7D" target="_blank" rel="noopener noreferrer">
               <img
                 src="/images/Tataneu.png"
                 alt="Ad"
                 className="mt-4 rounded"
               />
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

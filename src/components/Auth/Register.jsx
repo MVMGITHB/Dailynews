@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -13,6 +13,7 @@ const Register = () => {
     email: "",
     phone: "",
     password: "",
+    agree: false, // ✅ added for checkbox
   });
 
   const [loading, setLoading] = useState(false);
@@ -20,9 +21,10 @@ const Register = () => {
   const [successMsg, setSuccessMsg] = useState("");
 
   const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: type === "checkbox" ? checked : value,
     }));
   };
 
@@ -30,6 +32,12 @@ const Register = () => {
     e.preventDefault();
     setErrorMsg("");
     setSuccessMsg("");
+
+    if (!formData.agree) {
+      setErrorMsg("You must agree to the terms before registering.");
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -110,6 +118,22 @@ const Register = () => {
               required
               className="w-full border rounded p-2 text-sm"
             />
+          </div>
+
+          {/* ✅ New checkbox */}
+          <div className="flex items-start gap-2">
+            <input
+              type="checkbox"
+              name="agree"
+              checked={formData.agree}
+              onChange={handleChange}
+              className="mt-1"
+            />
+            <label className="text-sm text-gray-700">
+              I agree to receive communication regarding various offers and products
+              through Call, Email, SMS, Whatsapp, etc. from{" "}
+              <strong>dailynewzmail.com</strong> & its partners.
+            </label>
           </div>
 
           <button

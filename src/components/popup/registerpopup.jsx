@@ -13,7 +13,7 @@ export default function DailyNewzMailPopup() {
       const timer = setTimeout(() => {
         setIsOpen(true);
         localStorage.setItem("dailynewzmail_popup_shown", "true");
-      }, 3000); // Auto open after 3 seconds
+      }, 7000); // Auto open after 3 seconds
 
       return () => clearTimeout(timer);
     }

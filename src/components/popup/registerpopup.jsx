@@ -7,11 +7,16 @@ export default function DailyNewzMailPopup() {
   const [email, setEmail] = useState("");
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsOpen(true);
-    }, 3000); // Auto open after 3 seconds
+    const popupShown = localStorage.getItem("dailynewzmail_popup_shown");
 
-    return () => clearTimeout(timer);
+    if (!popupShown) {
+      const timer = setTimeout(() => {
+        setIsOpen(true);
+        localStorage.setItem("dailynewzmail_popup_shown", "true");
+      }, 3000); // Auto open after 3 seconds
+
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   const handleSubmit = (e) => {
@@ -33,7 +38,7 @@ export default function DailyNewzMailPopup() {
 
       {/* Popup Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/40 bg-opacity-50 z-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-black/40 z-50">
           <div className="bg-white rounded-xl shadow-lg w-full max-w-md p-6 relative animate-fadeIn">
             {/* Close Button */}
             <button

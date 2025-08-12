@@ -45,8 +45,6 @@ export const ArticleHome = ({ data }) => {
 
       {/* Grid Layout */}
       <div className="max-w-[1600px] px-4 md:px-6 mx-auto grid grid-cols-1 md:grid-cols-12 gap-6">
-
-
         {/* Left Sidebar */}
         <div className="hidden md:block   md:col-span-3 h-fit sticky top-10">
           <div className="flex flex-col gap-4">
@@ -57,8 +55,14 @@ export const ArticleHome = ({ data }) => {
                 className="mt-4 rounded"
               />
             </a> */}
+            <a
+              href="https://tracking.ajio.business/click?pid=87&offer_id=2&sub1=pass_your_subid%20&redirect=https://www.ajio.com/s/50to90percentoff-140961"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/images/ajioad.png" alt="Ad" className="mt-4 rounded" />
+            </a>
             <TopPicks news={news} />
-
           </div>
         </div>
 
@@ -116,8 +120,14 @@ export const ArticleHome = ({ data }) => {
         </div>
         {/* Mobile Picks & News */}
         <div className="block md:hidden space-y-6">
-
           <TopPicks news={news} />
+          <a
+              href="https://tracking.ajio.business/click?pid=87&offer_id=2&sub1=pass_your_subid%20&redirect=https://www.ajio.com/s/50to90percentoff-140961"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/images/ajioad.png" alt="Ad" className="mt-4 rounded" />
+            </a>
           {/* <a href="https://trk.clickgenie.in/click?campaign_id=34900&pub_id=5743&p1=%7Byour-transaction-id%7D&source=%7Byour-sub-aff-id%7D" target="_blank" rel="noopener noreferrer">
             <img
               src="/images/Tataneu.png"
@@ -127,27 +137,26 @@ export const ArticleHome = ({ data }) => {
           </a> */}
 
           <LatestNews news={news} />
-          {/* <a href="https://trk.clickgenie.in/click?campaign_id=34900&pub_id=5743&p1=%7Byour-transaction-id%7D&source=%7Byour-sub-aff-id%7D" target="_blank" rel="noopener noreferrer">
-            <img
-              src="/images/Tataneu.png"
-              alt="Ad"
-              className="mt-4 rounded"
-            />
-          </a> */}
+          <a
+            href="https://tracking.ajio.business/click?pid=87&offer_id=2&sub1=pass_your_subid%20&redirect=https://www.ajio.com/s/50to90percentoff-140961"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/images/ajioad.png" alt="Ad" className="mt-4 rounded" />
+          </a>
         </div>
-
 
         {/* Right Sidebar */}
         <div className="hidden md:block  md:col-span-3 h-fit sticky top-10">
           <div className="flex flex-col gap-4">
             <LatestNews news={news} />
-            {/* <a href="https://trk.clickgenie.in/click?campaign_id=34900&pub_id=5743&p1=%7Byour-transaction-id%7D&source=%7Byour-sub-aff-id%7D" target="_blank" rel="noopener noreferrer">
-              <img
-                src="/images/Tataneu.png"
-                alt="Ad"
-                className="mt-4 rounded"
-              />
-            </a> */}
+            <a
+              href="https://tracking.ajio.business/click?pid=87&offer_id=2&sub1=pass_your_subid%20&redirect=https://www.ajio.com/s/50to90percentoff-140961"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/images/ajioad.png" alt="Ad" className="mt-4 rounded" />
+            </a>
           </div>
         </div>
       </div>

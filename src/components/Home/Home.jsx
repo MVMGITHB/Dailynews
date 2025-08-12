@@ -43,7 +43,7 @@ const Home = () => {
             className="block w-full"
           >
             <Image
-              src="/images/Ajioad.png"
+              src="/images/ajionew.jpeg"
               alt="Ad"
               className="mt-4 rounded w-full h-auto object-contain" // ✅ Full width on mobile
               width={300}
@@ -87,7 +87,7 @@ const Home = () => {
             className="block w-full"
           >
             <Image
-              src="/images/Ajioad.png"
+              src="/images/ajionew.jpeg"
               alt="Ad"
               className="mt-4 rounded w-full h-auto object-contain" // ✅ Full width on mobile
               width={300}

@@ -29,12 +29,20 @@ export default function DailyNewzMailPopup() {
   return (
     <>
       {/* Trigger Button */}
-      <button
+      {/* <button
         onClick={() => setIsOpen(true)}
         className="bg-red-600 hover:bg-red-700 text-white font-semibold px-4 py-2 rounded-lg shadow-md"
       >
         Subscribe Now
-      </button>
+      </button> */}
+
+      <button
+  onClick={() => setIsOpen(true)}
+  className="bg-gradient-to-b from-orange-500 via-white to-green-500 hover:brightness-110 text-black font-semibold px-4 py-2 rounded-lg shadow-md border border-gray-300"
+>
+  Subscribe Now
+</button>
+
 
       {/* Popup Overlay */}
       {isOpen && (

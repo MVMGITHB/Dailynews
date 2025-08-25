@@ -24,11 +24,22 @@ const prata = Prata({
 export const metadata = {
   title: "DailyNews",
   description: "Get Latest News and Updates",
+  icons: {
+    icon: "/images/favicon.png", // path inside /public
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="icon"
+          href="/images/favicon.png"
+          type="image/x-icon"
+          sizes="16x16"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${prata.variable} antialiased`}
       >

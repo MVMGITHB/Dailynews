@@ -36,6 +36,14 @@ export default function DailyNewzMailPopup() {
         Subscribe Now
       </button>
 
+      {/* <button
+  onClick={() => setIsOpen(true)}
+  className="bg-gradient-to-b from-orange-500 via-white to-green-500 hover:brightness-110 text-black font-semibold px-4 py-2 rounded-lg shadow-md border border-gray-300"
+>
+  Subscribe Now
+</button> */}
+
+
       {/* Popup Overlay */}
       {isOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/40 z-50">

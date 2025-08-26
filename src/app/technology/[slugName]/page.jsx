@@ -1,11 +1,12 @@
 import Article from "@/components/Article/Article";
 import { base_url } from "@/components/Helper/helper";
 import axios from "axios";
-import { Metadata } from "next";
 import Script from "next/script";
 
+const Base_url = "https://dailynewzmail.com/";
+
 export async function generateMetadata({ params }) {
-  const { slugName } = params;
+  const { slugName } = await params;
 
   try {
     const response = await axios.get(
@@ -51,7 +52,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Page({ params }) {
-  const { slugName } = params;
+  const { slugName } = await params;
 
   try {
     const response = await axios.get(

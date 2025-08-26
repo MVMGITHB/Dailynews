@@ -45,7 +45,8 @@ const Home = () => {
             <Image
               src="/images/ajionew.jpeg"
               alt="Ad"
-              className="mt-4 rounded w-full h-auto object-contain" // ✅ Full width on mobile
+              priority
+              className="mt-4 rounded w-full h-auto object-contain"
               width={300}
               height={200}
             />
@@ -89,6 +90,7 @@ const Home = () => {
             <Image
               src="/images/ajionew.jpeg"
               alt="Ad"
+              priority
               className="mt-4 rounded w-full h-auto object-contain" // ✅ Full width on mobile
               width={300}
               height={200}

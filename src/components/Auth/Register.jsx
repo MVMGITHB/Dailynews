@@ -3,7 +3,7 @@
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { base_url } from "../Helper/helper";
+import { base_url, base_url1 } from "../Helper/helper";
 
 const Register = () => {
   const router = useRouter();
@@ -41,7 +41,7 @@ const Register = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post(`${base_url}/api/auth/register`, formData);
+      const response = await axios.post(`${base_url1}/api/users/register`, formData);
       setSuccessMsg("Registration successful!");
       setTimeout(() => {
         router.push("/login");

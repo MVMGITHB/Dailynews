@@ -87,7 +87,7 @@ export const ArticleHome = ({ data }) => {
   // ----------------- ✅ SCHEMA LOGIC END -----------------
 
   return (
-    <div className="w-full py-6 bg-gray-50 ">
+    <div className="w-full py-6 bg-gray-50">
       {/* ✅ Structured Data Scripts */}
       <script
         type="application/ld+json"
@@ -104,9 +104,20 @@ export const ArticleHome = ({ data }) => {
         />
       )}
 
+      {/* Mobile Ad (Top)
+      <div className="md:hidden w-full mb-4 px-4">
+        <a
+          href="https://tracking.ajio.business/click?pid=87&offer_id=2&sub1=pass_your_subid%20&redirect=https://www.ajio.com/s/50to90percentoff-140961"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/images/ajionew.jpeg" alt="Ad" className="rounded" />
+        </a>
+      </div> */}
+
       {/* Grid Layout */}
       <div className="max-w-[1600px] px-4 md:px-6 mx-auto grid grid-cols-1 md:grid-cols-12 gap-6">
-        {/* Left Sidebar */}
+        {/* Left Sidebar (Desktop) */}
         <div className="hidden md:block md:col-span-3 h-fit sticky top-10">
           <div className="flex flex-col gap-4">
             <a
@@ -198,9 +209,20 @@ export const ArticleHome = ({ data }) => {
               </p>
             </div>
           )}
+
+          {/* Mobile Ad (Bottom) */}
+          <div className="md:hidden w-full mt-6">
+            <a
+              href="https://tracking.ajio.business/click?pid=87&offer_id=2&sub1=pass_your_subid%20&redirect=https://www.ajio.com/s/50to90percentoff-140961"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="/images/ajionew.jpeg" alt="Ad" className="rounded" />
+            </a>
+          </div>
         </div>
 
-        {/* Right Sidebar */}
+        {/* Right Sidebar (Desktop) */}
         <div className="hidden md:block md:col-span-3 h-fit sticky top-10">
           <div className="flex flex-col gap-4">
             <LatestNews news={news} />
@@ -231,6 +253,16 @@ export const ArticleHome = ({ data }) => {
       {/* Missed Section */}
       <div className="max-w-8xl mx-auto mt-12">
         <Missed />
+      </div>
+      {/* Mobile Ad after Missed Section */}
+      <div className="md:hidden w-full mt-6 px-4">
+        <a
+          href="https://tracking.ajio.business/click?pid=87&offer_id=2&sub1=pass_your_subid%20&redirect=https://www.ajio.com/s/50to90percentoff-140961"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/images/ajionew.jpeg" alt="Ad" className="rounded" />
+        </a>
       </div>
     </div>
   );

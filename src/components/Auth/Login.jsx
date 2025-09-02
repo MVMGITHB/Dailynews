@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { base_url } from "../Helper/helper";
+import { base_url, base_url1 } from "../Helper/helper";
 import axios from "axios";
 import { useAuth } from "../context/auth";
 
@@ -29,11 +29,11 @@ const Login = () => {
       setError(false);
 
       const formdata = {
-        identifier: formData.email,
+        email: formData.email,
         password: formData.password,
       };
 
-      const response = await axios.post(`${base_url}/api/auth/login`, formdata);
+      const response = await axios.post(`${base_url1}/api/users/login`, formdata);
       if (response.data) {
         setAuth({
           ...auth,

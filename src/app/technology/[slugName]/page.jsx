@@ -15,17 +15,18 @@ export async function generateMetadata({ params }) {
     const data = response.data;
 
     return {
-      title: data?.title || "DailyNewzMail",
-      description: data?.subtitle || "Latest article from DailyNewzMail",
+      title: data?.title || "dailynewzmail",
+      description: data?.subtitle || "Latest article from dailynewzmail",
+      metadataBase: new URL("https://dailynewzmail.com"),
       alternates: {
-        canonical: `https://dailynewzmail.com/blog/${slugName}`,
+        canonical: "./",
       },
       openGraph: {
         title: data?.title,
         description: data?.subtitle,
         url: `https://dailynewzmail.com/blog/${slugName}`,
         type: "article",
-        siteName: "DailyNewzMail",
+        siteName: "dailynewzmail",
         images: [
           {
             url: `${base_url}${data?.image}`,
@@ -45,8 +46,8 @@ export async function generateMetadata({ params }) {
   } catch (error) {
     console.error("SEO metadata error:", error);
     return {
-      title: "DailyNewzMail",
-      description: "Latest news, blogs and picks from DailyNewzMail.",
+      title: "dailynewzmail",
+      description: "Latest news, blogs and stories from dailynewzmail.",
     };
   }
 }
@@ -91,15 +92,15 @@ export default async function Page({ params }) {
       image: [`${base_url}${data1?.image}`],
       author: {
         "@type": "Organization",
-        name: "DailyNewzMail",
+        name: "dailynewzmail",
         url: "https://dailynewzmail.com",
       },
       publisher: {
         "@type": "Organization",
-        name: "DailyNewzMail",
+        name: "dailynewzmail",
         logo: {
           "@type": "ImageObject",
-          url: "https://dailynewzmail.com/images/logo.png",
+          url: "https://dailynewzmail.com/images/logo.png", // ✅ Replace with actual logo path
         },
       },
       datePublished: data1?.createdAt,

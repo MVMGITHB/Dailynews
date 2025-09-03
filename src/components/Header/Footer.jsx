@@ -1,12 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -15,7 +10,11 @@ const Footer = () => {
         {/* Logo & Description */}
         <div className="md:w-1/4">
           <Link href="/">
-            <img src="/logo.png" alt="Logo" className="w-28 h-28 object-cover" />
+            <img
+              src="/logo.png"
+              alt="Logo"
+              className="w-28 h-28 object-cover"
+            />
           </Link>
           <p className="text-sm mt-2">
             Delivering trusted updates, top stories, and expert analysis for a
@@ -25,7 +24,7 @@ const Footer = () => {
 
         {/* Resources */}
         <div className="md:w-1/4">
-          <h3 className="text-xl font-semibold text-black mb-3">Resources</h3>
+          <p className="text-xl font-semibold text-black mb-3">Resources</p>
           <ul className="space-y-2 text-sm">
             <li>
               <a href="/privacy-policy" className="hover:underline">
@@ -52,7 +51,7 @@ const Footer = () => {
 
         {/* Contact & Socials */}
         <div className="md:w-1/4">
-          <h3 className="text-xl font-semibold text-black mb-3">Contact</h3>
+          <p className="text-xl font-semibold text-black mb-3">Contact</p>
           <ul className="text-sm space-y-2">
             <li>Address: Noida, India</li>
           </ul>

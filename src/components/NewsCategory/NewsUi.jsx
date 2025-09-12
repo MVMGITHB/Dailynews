@@ -37,8 +37,8 @@ function NewsUi({ url }) {
 
         <h1 className="text-2xl md:text-3xl font-bold text-[#B00020] text-center">
           {heading
-            ? `Latest ${heading} News, Updates & Highlights - SuperNPro`
-            : "Latest Sports News - SuperNPro"}
+            ? `Latest ${heading} News, Updates & Highlights - ${heading}`
+            : `Latest ${heading}  News`}
         </h1>
 
         {/* Right Lines */}

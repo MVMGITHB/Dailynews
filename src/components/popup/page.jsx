@@ -10,19 +10,25 @@ export default function EVPopup({ data }) {
   const pathname = usePathname();
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowPopup(true);
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, [pathname]);
+    // Only show popup if data and images exist
+    if (data?.images?.length > 0) {
+      const timer = setTimeout(() => {
+        setShowPopup(true);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [pathname, data]);
 
   const handleClose = () => {
     setShowPopup(false);
   };
 
+  // Do not render anything if no data/images
+  if (!data?.images?.length) return null;
+
   return (
     showPopup && (
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-2 sm:p-4">
+      <div className="fixed inset-0 z-50 flex items-center justify-center  p-2 sm:p-4">
         <div className="relative w-full max-w-sm sm:max-w-md md:max-w-xl lg:max-w-2xl rounded-lg overflow-hidden bg-white shadow-lg max-h-[90vh]">
           {/* Close button */}
           <button
@@ -35,23 +41,21 @@ export default function EVPopup({ data }) {
             &times;
           </button>
 
-          {data?.images?.[0] ? (
-            <a
-              href={data?.linkArray?.[0]}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-            >
-              <Image
-                src={`${base_url}${data?.images[0]}`}
-                alt="Curvv EV Ad"
-                width={872}
-                height={389}
-                className="w-full h-auto max-h-[80vh] object-contain"
-                priority
-              />
-            </a>
-          ) : null}
+          <a
+            href={data.linkArray?.[0]}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block"
+          >
+            <Image
+              src={`${base_url}${data.images[0]}`}
+              alt="Curvv EV Ad"
+              width={872}
+              height={389}
+              className="w-full h-auto max-h-[80vh] object-contain"
+              priority
+            />
+          </a>
         </div>
       </div>
     )

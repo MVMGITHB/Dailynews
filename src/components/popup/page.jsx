@@ -47,14 +47,17 @@ export default function EVPopup({ data }) {
             rel="noopener noreferrer"
             className="block"
           >
-            <Image
+            {/* <Image
               src={`${base_url}${data.images[0]}`}
               alt="Curvv EV Ad"
               width={872}
               height={389}
               className="w-full h-auto max-h-[80vh] object-contain"
               priority
-            />
+            /> */}
+
+            <img src={`${base_url}${data.images[0]}`}
+              alt="Curvv EV Ad" />
           </a>
         </div>
       </div>

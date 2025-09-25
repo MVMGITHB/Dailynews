@@ -144,8 +144,10 @@ export const ArticleHome = ({ data }) => {
             “{data?.subtitle}”
           </h2>
 
-          <div className="relative w-full h-[300px] md:h-[400px]">
-            <Image
+           <div className="relative ">
+               {
+                
+               /*   <Image
               src={`${base_url}${data?.image}`}
               alt="Match Image"
               priority
@@ -153,10 +155,22 @@ export const ArticleHome = ({ data }) => {
               fetchPriority="high"
               className="object-cover rounded-md"
               sizes="(max-width: 768px) 100vw, 1200px"
-            />
+            /> */
+            
+            }
+
+
+
+           <img
+  src={`${base_url}${data?.image}`}
+  alt=""
+  className="object-cover rounded-md  w-full md:max-w-[1200px]"
+  
+/>
+
           </div>
 
-          <div className="text-sm bg-gray-200 text-gray-700 px-4 py-2 w-fit rounded">
+          <div className="text-sm bg-gray-200 text-gray-700 px-4 pt-8 w-fit rounded">
             <span className="text-[#B00020] font-semibold">Updated – </span>
             {new Intl.DateTimeFormat("en-GB", {
               day: "2-digit",

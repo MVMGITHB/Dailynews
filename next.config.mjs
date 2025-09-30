@@ -2,7 +2,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["api.dailynewzmail.com"], // 👈 whitelist your API domain
+    domains: ["api.dailynewzmail.com", "66.116.198.221"],
   },
 };
 

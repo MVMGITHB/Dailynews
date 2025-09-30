@@ -11,7 +11,7 @@ export default function TermsPage() {
     <div className="gettouch-container w-[98%] md:w-[80%]  mx-auto p-6 bg-white text-gray-900 ">
       <header className="gettouch-header mb-6">
         <h1 className="text-3xl font-extrabold mb-2">Terms of Use / Service</h1>
-        <p className="text-sm text-gray-600">Daily News Mail — Managed by MVM Business Services</p>
+        {/* <p className="text-sm text-gray-600">Daily News Mail — Managed by MVM Business Services</p> */}
         <hr className="my-4" />
       </header>
 

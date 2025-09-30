@@ -147,15 +147,15 @@ export const ArticleHome = ({ data }) => {
            <div className="relative ">
                {
                 
-               /*   <Image
-              src={`${base_url}${data?.image}`}
-              alt="Match Image"
-              priority
-              fill
-              fetchPriority="high"
-              className="object-cover rounded-md"
-              sizes="(max-width: 768px) 100vw, 1200px"
-            /> */
+            //       <Image
+            //   src={`${base_url}${data?.image}`}
+            //   alt="Match Image"
+            //   priority
+            //   fill
+            //   fetchPriority="high"
+            //   className="object-cover rounded-md"
+            //   sizes="(max-width: 768px) 100vw, 1200px"
+            // /> 
             
             }
 

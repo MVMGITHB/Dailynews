@@ -37,7 +37,7 @@ export default function TermsPage() {
         <section id="overview">
           <p>
             This Agreement sets forth the terms and conditions that apply to the access and use of the website
-            <strong> "dailynewsmail.com"</strong>, which is managed and operated by <strong>MVM Business Services</strong>,
+            <strong> "dailynewsmail.com"</strong>,
             incorporated under the laws of India and registered under the Companies Act, 1956.
           </p>
           <p className="mt-2">

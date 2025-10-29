@@ -111,7 +111,14 @@ export const ArticleHome = ({ data }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/images/ajionew.jpeg" alt="Ad" className="rounded" />
+          <img 
+          //seo-optimized article link (include alt-txt, img-title, lazy-loading, decoding)
+          src="/images/ajionew.jpeg" 
+          alt="Ajio fashion sale banner – shop trendy clothes online"
+          title="Ajio New Collection – Fashion Sale 2025" 
+          loading= "lazy"
+          decoding = "async"
+          className="rounded" />
         </a>
       </div> */}
 
@@ -126,8 +133,12 @@ export const ArticleHome = ({ data }) => {
               rel="noopener noreferrer"
             >
               <img
+                //seo-optimized article link (include alt-txt, img-title, lazy-loading, decoding);
                 src="/images/ajionew.jpeg"
-                alt="Ad"
+                alt="Ajio fashion sale banner – shop trendy clothes online"
+                title="Ajio New Collection – Fashion Sale 2025"
+                loading="lazy"
+                decoding="async"
                 className="mt-4 rounded"
               />
             </a>
@@ -144,30 +155,36 @@ export const ArticleHome = ({ data }) => {
             “{data?.subtitle}”
           </h2>
 
-           <div className="relative ">
-               {
-                
-            //       <Image
-            //   src={`${base_url}${data?.image}`}
-            //   alt="Match Image"
-            //   priority
-            //   fill
-            //   fetchPriority="high"
-            //   className="object-cover rounded-md"
-            //   sizes="(max-width: 768px) 100vw, 1200px"
-            // /> 
-            
+          <div className="relative ">
+            {
+              //       <Image
+              //   src={`${base_url}${data?.image}`}
+              //   alt="Match Image"
+              //   priority
+              //   fill
+              //   fetchPriority="high"
+              //   className="object-cover rounded-md"
+              //   sizes="(max-width: 768px) 100vw, 1200px"
+              // />
             }
 
-
-
-           <img
-  src={`${base_url}${data?.image}`}
-  alt=""
-  className="object-cover rounded-md  w-full md:max-w-[1200px]"
-  
-/>
-
+            <img
+              //seo-optimized article link (include img-title, alt-txt, lazy-loading, async-decoding);
+              src={`${base_url}${data?.image}`}
+              alt={
+                data?.title
+                  ? `${data.title} – Fashion collection`
+                  : "Fashion collection banner"
+              }
+              title={
+                data?.title
+                  ? `${data.title} | Fashion 2025`
+                  : "Ajio New Collection – Fashion Sale 2025"
+              }
+              loading="lazy"
+              decoding="async"
+              className="object-cover rounded-md  w-full md:max-w-[1200px]"
+            />
           </div>
 
           <div className="text-sm bg-gray-200 text-gray-700 px-4 pt-8 w-fit rounded">
@@ -231,7 +248,15 @@ export const ArticleHome = ({ data }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/images/ajionew.jpeg" alt="Ad" className="rounded" />
+              <img
+              //seo-optimized article link (include alt-txt, img-title, lazy-loading, async-decoding);
+                src="/images/ajionew.jpeg"
+                alt="Ajio new fashion collection banner – shop trendy clothing online"
+                title="Ajio 2025 Fashion Sale – Trendy Clothes for Men and Women"
+                loading="lazy"
+                decoding="async"
+                className="rounded"
+              />
             </a>
           </div>
         </div>

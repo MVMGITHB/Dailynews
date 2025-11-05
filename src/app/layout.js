@@ -40,6 +40,20 @@ export default function RootLayout({ children }) {
           type="image/x-icon"
           sizes="16x16"
         />
+         <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-PP6SEWNC8L"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-PP6SEWNC8L');
+          `,
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${prata.variable} antialiased`}

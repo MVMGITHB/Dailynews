@@ -60,7 +60,7 @@ const Footer = () => {
             <a href="https://www.facebook.com/Daillynewzmail" className="hover:text-blue-500">
               <FaFacebookF />
             </a>
-            <a href="#" className="hover:text-sky-400">
+            <a href="https://x.com/DailynewzM91211" className="hover:text-sky-400">
               <FaTwitter />
             </a>
             <a
@@ -69,9 +69,11 @@ const Footer = () => {
             >
               <FaInstagram />
             </a>
-            <a href="#" className="hover:text-red-600">
+
+
+            {/* <a href="#" className="hover:text-red-600">
               <FaYoutube />
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

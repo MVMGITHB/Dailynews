@@ -188,8 +188,8 @@ export const ArticleHome = ({ data }) => {
           </div>
 
           <div className="text-sm bg-gray-200 text-gray-700 px-4 pt-8 w-fit rounded">
-            <span className="text-[#B00020] font-semibold">Updated – </span>
-            {new Intl.DateTimeFormat("en-GB", {
+            <span className="text-[#B00020] font-semibold">Updated At – </span>
+            {/* {new Intl.DateTimeFormat("en-GB", {
               day: "2-digit",
               month: "2-digit",
               year: "numeric",
@@ -197,7 +197,15 @@ export const ArticleHome = ({ data }) => {
               minute: "2-digit",
               hour12: true,
               timeZone: "Asia/Kolkata",
-            }).format(new Date(data?.createdAt))}
+            }).format(new Date(data?.createdAt))} */}
+
+             <time dateTime={data?.createdAt}>
+                {new Intl.DateTimeFormat("en-GB", {
+                  day: "2-digit",
+                  month: "short",
+                  year: "numeric",
+                }).format(new Date(data?.createdAt))}
+              </time>
           </div>
 
           <div className="space-y-4 text-gray-800 text-base md:text-lg leading-relaxed">

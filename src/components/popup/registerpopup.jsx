@@ -43,7 +43,6 @@ export default function DailyNewzMailPopup() {
   Subscribe Now
 </button> */}
 
-
       {/* Popup Overlay */}
       {isOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/40 z-50">

@@ -1,4 +1,5 @@
 import Home from "@/components/Home/Home";
+import DailyNewzMailPopup from "@/components/popup/registerpopup";
 
 // ✅ Static SEO Metadata for dailynewzmail.com
 export const metadata = {
@@ -44,6 +45,7 @@ export default function Page() {
   return (
     <>
       <Home />
+        <DailyNewzMailPopup />
     </>
   );
 }

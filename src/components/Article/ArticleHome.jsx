@@ -129,7 +129,7 @@ export const ArticleHome = ({ data }) => {
         <div className="hidden md:block md:col-span-3 h-fit sticky top-10">
           <div className="flex flex-col gap-4">
             <a
-              href="http://www.intellectmedia.net/trk/click.asp?cid=3203&pid=522&did=23841&code=314"
+              href="http://www.intellectmedia.net/trk/click.asp?cid=3203&pid=661&did=23840&code=326"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -300,7 +300,7 @@ export const ArticleHome = ({ data }) => {
           {/* Mobile Ad (Bottom) */}
           <div className="md:hidden w-full mt-6">
             <a
-              href="https://tracking.ajio.business/click?pid=87&offer_id=2&sub1=pass_your_subid%20&redirect=https://www.ajio.com/s/50to90percentoff-140961"
+              href="http://www.intellectmedia.net/trk/click.asp?cid=3203&pid=661&did=23840&code=326"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -322,7 +322,7 @@ export const ArticleHome = ({ data }) => {
           <div className="flex flex-col gap-4">
             <LatestNews news={news} />
             <a
-              href="http://www.intellectmedia.net/trk/click.asp?cid=3203&pid=522&did=23841&code=314"
+              href="http://www.intellectmedia.net/trk/click.asp?cid=3203&pid=661&did=23840&code=326"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -352,7 +352,7 @@ export const ArticleHome = ({ data }) => {
       {/* Mobile Ad after Missed Section */}
       <div className="md:hidden w-full mt-6 px-4">
         <a
-          href="https://tracking.ajio.business/click?pid=87&offer_id=2&sub1=pass_your_subid%20&redirect=https://www.ajio.com/s/50to90percentoff-140961"
+          href="http://www.intellectmedia.net/trk/click.asp?cid=3203&pid=661&did=23840&code=326"
           target="_blank"
           rel="noopener noreferrer"
         >

@@ -37,7 +37,7 @@ const Home = () => {
             
           </a> */}
           <a
-            href="http://www.intellectmedia.net/trk/click.asp?cid=3203&pid=522&did=23841&code=314"
+            href="http://www.intellectmedia.net/trk/click.asp?cid=3203&pid=661&did=23840&code=326"
             target="_blank"
             rel="noopener noreferrer"
             className="block w-full"
@@ -82,7 +82,7 @@ const Home = () => {
             />
           </a> */}
           <a
-            href="http://www.intellectmedia.net/trk/click.asp?cid=3203&pid=522&did=23841&code=314"
+            href="http://www.intellectmedia.net/trk/click.asp?cid=3203&pid=661&did=23840&code=326"
             target="_blank"
             rel="noopener noreferrer"
             className="block w-full"

@@ -7,7 +7,7 @@ import Trending from "../HeroSection/Trending";
 import Missed from "../HeroSection/Missed";
 import { base_url } from "../Helper/helper";
 import axios from "axios";
-import Image from "next/image"; // ✅ Import Next.js Image
+import Image from "next/image"; 
 
 const Home = () => {
   const [news, setNews] = useState();
@@ -37,13 +37,13 @@ const Home = () => {
             
           </a> */}
           <a
-            href="https://tracking.ajio.business/click?pid=87&offer_id=2&sub1=pass_your_subid%20&redirect=https://www.ajio.com/s/50to90percentoff-140961"
+            href="http://www.intellectmedia.net/trk/click.asp?cid=3203&pid=522&did=23841&code=314"
             target="_blank"
             rel="noopener noreferrer"
             className="block w-full"
           >
             <Image
-              src="/images/ajionew.jpeg"
+              src="/images/aditybirla.png"
               alt="Ad"
               priority
               className="mt-4 rounded w-full h-auto object-contain"
@@ -82,13 +82,13 @@ const Home = () => {
             />
           </a> */}
           <a
-            href="https://tracking.ajio.business/click?pid=87&offer_id=2&sub1=pass_your_subid%20&redirect=https://www.ajio.com/s/50to90percentoff-140961"
+            href="http://www.intellectmedia.net/trk/click.asp?cid=3203&pid=522&did=23841&code=314"
             target="_blank"
             rel="noopener noreferrer"
             className="block w-full"
           >
             <Image
-              src="/images/ajionew.jpeg"
+              src="/images/aditybirla.png"
               alt="Ad"
               priority
               className="mt-4 rounded w-full h-auto object-contain" // ✅ Full width on mobile

@@ -43,8 +43,8 @@ export default function MainPopup() {
     return () => clearTimeout(timer);
   }, [pathname]); // <-- Runs again if URL changes
 
-  console.log("open", open);
-  console.log("popup data", popup);
+  // console.log("open", open);
+  // console.log("popup data", popup);
 
   if (!popup || !open) return null;
 

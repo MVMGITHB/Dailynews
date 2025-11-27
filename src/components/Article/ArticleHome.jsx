@@ -7,6 +7,7 @@ import Missed from "../HeroSection/Missed";
 import axios from "axios";
 import TopPicks from "../Hero/TopPicks";
 import Image from "next/image";
+import Link from "next/link";
 
 export const ArticleHome = ({ data }) => {
   const [news, setNews] = useState();
@@ -128,13 +129,13 @@ export const ArticleHome = ({ data }) => {
         <div className="hidden md:block md:col-span-3 h-fit sticky top-10">
           <div className="flex flex-col gap-4">
             <a
-              href="https://tracking.ajio.business/click?pid=87&offer_id=2&sub1=pass_your_subid%20&redirect=https://www.ajio.com/s/50to90percentoff-140961"
+              href="http://www.intellectmedia.net/trk/click.asp?cid=3203&pid=522&did=23841&code=314"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img
                 //seo-optimized article link (include alt-txt, img-title, lazy-loading, decoding);
-                src="/images/ajionew.jpeg"
+                src="/images/aditybirla.png"
                 alt="Ajio fashion sale banner – shop trendy clothes online"
                 title="Ajio New Collection – Fashion Sale 2025"
                 loading="lazy"
@@ -151,6 +152,53 @@ export const ArticleHome = ({ data }) => {
           <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-snug">
             {data?.title}
           </h1>
+            <div className="flex  justify-center  gap-4 pb-4">
+            <div className="flex gap-2 md:flex-row justify-center">
+              <h3 className="text-lg text-gray-700">
+                Author:{" "}
+                <strong>
+                  {" "}
+                  <Link
+                    href={`/author/${data?.author?.slug}`}
+                    rel="noopner noreferrer"
+                    title={`Read more articles by ${data?.author?.name}`}
+                    className="text-blue-600"
+                  >
+                    {data?.author?.name}
+                  </Link>
+                </strong>
+              </h3>
+              {/* <h3 className="text-lg text-gray-600">
+                Created At:{" "}
+                <strong>
+                  {new Date(data?.author?.createdAt).toLocaleDateString()}
+                </strong>
+              </h3> */}
+              <h3 className="text-lg text-gray-600">
+                Updated At:{" "}
+                <strong>
+                  {/* {new Date(data?.author?.updatedAt).toLocaleDateString()} */}
+                    <time dateTime={data?.createdAt}>
+                {new Intl.DateTimeFormat("en-GB", {
+                  day: "2-digit",
+                  month: "short",
+                  year: "numeric",
+                }).format(new Date(data?.createdAt))}
+              </time>
+                </strong>
+              </h3>
+            </div>
+
+            {/* <div>
+             <img
+            src={`${base_url}${data?.author?.image}`}
+            alt={data?.author?.name || "Author"}
+            className="hidden sm:block rounded-full w-24 h-24 object-cover border-2 border-gray-900 shadow-sm"
+            />
+
+          </div> */}
+          </div>
+
           <h2 className="text-xl md:text-2xl text-gray-600 font-medium italic">
             “{data?.subtitle}”
           </h2>
@@ -187,9 +235,9 @@ export const ArticleHome = ({ data }) => {
             />
           </div>
 
-          <div className="text-sm bg-gray-200 text-gray-700 px-4 pt-8 w-fit rounded">
+          {/* <div className="text-sm bg-gray-200 text-gray-700 px-4 pt-8 w-fit rounded">
             <span className="text-[#B00020] font-semibold">Updated At – </span>
-            {/* {new Intl.DateTimeFormat("en-GB", {
+            {new Intl.DateTimeFormat("en-GB", {
               day: "2-digit",
               month: "2-digit",
               year: "numeric",
@@ -197,7 +245,7 @@ export const ArticleHome = ({ data }) => {
               minute: "2-digit",
               hour12: true,
               timeZone: "Asia/Kolkata",
-            }).format(new Date(data?.createdAt))} */}
+            }).format(new Date(data?.createdAt))} 
 
              <time dateTime={data?.createdAt}>
                 {new Intl.DateTimeFormat("en-GB", {
@@ -206,7 +254,7 @@ export const ArticleHome = ({ data }) => {
                   year: "numeric",
                 }).format(new Date(data?.createdAt))}
               </time>
-          </div>
+          </div> */}
 
           <div className="space-y-4 text-gray-800 text-base md:text-lg leading-relaxed">
             {typeof data?.content === "string" && (
@@ -258,7 +306,7 @@ export const ArticleHome = ({ data }) => {
             >
               <img
               //seo-optimized article link (include alt-txt, img-title, lazy-loading, async-decoding);
-                src="/images/ajionew.jpeg"
+                src="/images/aditybirla.png"
                 alt="Ajio new fashion collection banner – shop trendy clothing online"
                 title="Ajio 2025 Fashion Sale – Trendy Clothes for Men and Women"
                 loading="lazy"
@@ -274,12 +322,12 @@ export const ArticleHome = ({ data }) => {
           <div className="flex flex-col gap-4">
             <LatestNews news={news} />
             <a
-              href="https://tracking.ajio.business/click?pid=87&offer_id=2&sub1=pass_your_subid%20&redirect=https://www.ajio.com/s/50to90percentoff-140961"
+              href="http://www.intellectmedia.net/trk/click.asp?cid=3203&pid=522&did=23841&code=314"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img
-                src="/images/ajionew.jpeg"
+                src="/images/aditybirla.png"
                 alt="Ad"
                 className="mt-4 rounded"
               />
@@ -308,7 +356,7 @@ export const ArticleHome = ({ data }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/images/ajionew.jpeg" alt="Ad" className="rounded" />
+          <img src="/images/aditybirla.png" alt="Ad" className="rounded" />
         </a>
       </div>
     </div>

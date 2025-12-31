@@ -35,9 +35,9 @@ export default function MainPopup() {
         </button>
 
         {/* Static popup image */}
-        <Link href="https://example.com" target="_blank">
+        <Link href="https://spectrum.gotrackier.com/click?campaign_id=900&pub_id=945" target="_blank">
           <Image
-            src="/tataneugif.gif"  // public/tataneugif.gif
+            src="/starcreative2.gif"  // public/tataneugif.gif
             alt="Popup Banner"
             width={900}
             height={900}

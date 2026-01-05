@@ -60,9 +60,12 @@ const Register = () => {
   return (
     <div className="p-4">
       <div className="max-w-md mx-auto p-4 bg-[#fff5ff] border border-dashed border-[#7747ff] rounded-md text-black">
-        <div className="text-2xl font-bold mb-4 text-[#1e0e4b] text-center">
+        <h1 className="text-2xl font-bold mb-4 text-[#1e0e4b] text-center">
           Get updated to <span className="text-[#7747ff]">Daily News</span>
-        </div>
+        </h1>
+        <h2 className="text-1xl font-bold mb-4 text-[#1e0e4b] text-center">
+          Register Now
+        </h2>
 
         {errorMsg && (
           <div className="text-red-600 text-sm text-center mb-2">{errorMsg}</div>

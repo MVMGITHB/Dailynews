@@ -71,9 +71,9 @@ function NewsUi({ url }) {
                       </span>
                     )}
 
-                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-[#B00020] transition-colors line-clamp-2">
+                    <h2 className="text-lg font-semibold text-gray-900 group-hover:text-[#B00020] transition-colors line-clamp-2">
                       {blog?.title}
-                    </h3>
+                    </h2>
 
                     <p className="text-sm text-gray-600 mt-1 line-clamp-3">
                       {blog?.subtitle ||

@@ -1,9 +1,19 @@
-import Login from "@/components/Auth/Login"
+import Login from "@/components/Auth/Login";
 
-const page = () => {
+export const metadata = {
+  title: "Login | Top5Shots",
+  description: "Login to your Top5Shots account",
+  alternates: {
+    canonical: "https://top5shots.com/login",
+  },
+};
+
+const Page = () => {
   return (
-    <div><Login/></div>
-  )
-}
+    <div>
+      <Login />
+    </div>
+  );
+};
 
-export default page
+export default Page;

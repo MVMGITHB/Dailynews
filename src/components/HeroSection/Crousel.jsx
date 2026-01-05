@@ -10,22 +10,18 @@ import { base_url } from "../Helper/helper";
 import Link from "next/link";
 
 const Crousel = () => {
-   const [news,setNews] = useState();
-      const fetchdata  = async()=>{
-         try {
-            const res =await axios.get(`${base_url}/api/blog/getAllBlog`)
-            setNews(res?.data)
+  const [news, setNews] = useState();
+  const fetchdata = async () => {
+    try {
+      const res = await axios.get(`${base_url}/api/blog/getAllBlog`);
+      setNews(res?.data);
+    } catch (error) {}
+  };
 
-         } catch (error) {
-         }
-      }
+  useEffect(() => {
+    fetchdata();
+  }, []);
 
-      useEffect(()=>{
-           fetchdata()
-      },[])
-
-
-   
   const sliderRef = useRef(null);
 
   const settings = {
@@ -75,9 +71,11 @@ const Crousel = () => {
         {/* Slider */}
         <Slider ref={sliderRef} {...settings}>
           {news?.map((slide, i) => (
-            <Link 
-            href={`/${slide?.category?.slug}/${slide?.slug}`}
-            key={i} className="px-2">
+            <Link
+              href={`/${slide?.category?.slug}/${slide?.slug}`}
+              key={i}
+              className="px-2"
+            >
               <div
                 className="relative h-64 md:h-80 bg-cover bg-center rounded-xl overflow-hidden group"
                 style={{ backgroundImage: `url('${base_url}${slide?.image}')` }}
@@ -85,17 +83,14 @@ const Crousel = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent group-hover:scale-105 transition-transform duration-300" />
 
                 <div className="absolute bottom-0 p-4 z-10 w-full text-white">
+                  <div className="inline-block bg-[#B00020] bg-opacity-90 px-3 py-1 rounded-full text-sm font-semibold mb-2 shadow-md">
+                    {slide?.tag?.tagname}
+                  </div>
 
-
- 
-     <div  className="inline-block bg-[#B00020] bg-opacity-90 px-3 py-1 rounded-full text-sm font-semibold mb-2 shadow-md">
-       {slide?.tag?.tagname}
-  </div>
- 
-
-    <p className="text-lg font-semibold leading-snug">{slide?.title}</p>
-</div>
-
+                  <p className="text-lg font-semibold leading-snug">
+                    {slide?.title}
+                  </p>
+                </div>
               </div>
             </Link>
           ))}

@@ -54,13 +54,13 @@ const Login = () => {
 
   return (
     <div className="max-w-md relative flex flex-col p-4 rounded-md text-black bg-[#fff5ff] mx-auto m-4 border border-[#7747ff] border-dashed">
-      <div className="text-2xl font-bold mb-2 text-[#1e0e4b] text-center">
+      <h1 className="text-2xl font-bold mb-2 text-[#1e0e4b] text-center">
         Welcome back to <span className="text-[#7747ff]">Daily News</span>
-      </div>
+      </h1>
 
-      <div className="text-sm font-normal mb-4 text-center text-[#1e0e4b]">
+      <h2 className="text-sm font-normal mb-4 text-center text-[#1e0e4b]">
         Log in to your account
-      </div>
+      </h2>
 
       {err && (
         <div className="text-sm text-red-600 text-center mb-2">

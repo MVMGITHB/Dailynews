@@ -43,7 +43,7 @@ export default function AuthorPage({ slug }) {
   if (!author)
     return <p className="p-8 text-center text-gray-500">No author found.</p>;
 
-  const fullName = `${author.firstName} ${author.lastName}`;
+  const fullName = `${author?.firstName} ${author?.lastName}`;
   const joinDate = new Date(author.createdAt).toLocaleDateString();
 
   return (
@@ -54,7 +54,7 @@ export default function AuthorPage({ slug }) {
             <Image
               src={
                 author?.image
-                  ? `${base_url}${author.image}`
+                  ? `${base_url}${author?.image}`
                   : "/images/default-user.png"
               }
               alt={author?.image || "Author"}
@@ -71,7 +71,7 @@ export default function AuthorPage({ slug }) {
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {author.tag && (
                   <span className="bg-green-100 text-green-800 text-sm px-4 py-1 rounded-full">
-                    🏷️ {author.tag}
+                    🏷️ {author?.tag}
                   </span>
                 )}
                 <span className="text-gray-600 text-sm">
@@ -79,39 +79,39 @@ export default function AuthorPage({ slug }) {
                 </span>
               </div>
 
-              {author.shortBio && (
+              {author?.shortBio && (
                 <div
                   className="text-gray-700 mt-4 leading-relaxed prose max-w-none"
-                  dangerouslySetInnerHTML={{ __html: author.shortBio }}
+                  dangerouslySetInnerHTML={{ __html: author?.shortBio }}
                 />
               )}
             </div>
           </div>
         </div>
 
-        {author.blog?.length > 0 && (
+        {author?.blog?.length > 0 && (
           <div className="mt-12 space-y-6">
             <h2 className="text-2xl font-semibold text-gray-800">
-              📝 Blog Posts by {author.name}
+              📝 Blog Posts by {author?.name}
             </h2>
 
-            {[...author.blog]
-              .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+            {[...author?.blog]
+              .sort((a, b) => new Date(b?.createdAt) - new Date(a?.createdAt))
               .map((post) => (
                 <div
-                  key={post._id}
+                  key={post?._id}
                   className="bg-white rounded-2xl p-6 shadow-md border"
                 >
                   <div className="flex flex-col lg:flex-row gap-4">
                     <Image
                       src={
-                        typeof post.image === "string"
-                          ? post.image.includes("res")
-                            ? post.image
-                            : `${base_url}${post.image}`
+                        typeof post?.image === "string"
+                          ? post?.image.includes("res")
+                            ? post?.image
+                            : `${base_url}${post?.image}`
                           : post.image?.url
                       }
-                      alt={post.title}
+                      alt={post?.title}
                       width={193} // replace with actual image width
                       height={128} // replace with actual image height
                       className="w-full lg:w-48 h-32 object-cover rounded-xl"
@@ -120,21 +120,21 @@ export default function AuthorPage({ slug }) {
 
                     <div className="flex-1">
                       <h3 className="text-xl font-bold text-gray-900">
-                        {post.title}
+                        {post?.title}
                       </h3>
-                      <p className="text-sm text-gray-600 mt-1">{post.mdesc}</p>
+                      <p className="text-sm text-gray-600 mt-1">{post?.mdesc}</p>
 
                       <div className="flex flex-wrap mt-2 gap-2 text-sm">
                         <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">
-                          📂 {post.categories?.name}
+                          📂 {post?.categories?.name}
                         </span>
                         <span className="bg-pink-100 text-pink-800 px-3 py-1 rounded-full">
-                          🔖 {post.subcategories?.name}
+                          🔖 {post?.subcategories?.name}
                         </span>
                       </div>
 
                       <a
-                        href={`/${post?.category?.slug}/${post.slug}`}
+                        href={`/${post?.category?.slug}/${post?.slug}`}
                         className="inline-block mt-4 text-blue-600 hover:underline text-sm font-medium"
                       >
                         Read More →

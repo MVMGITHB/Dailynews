@@ -8,6 +8,7 @@ import axios from "axios";
 import TopPicks from "../Hero/TopPicks";
 import Image from "next/image";
 import Link from "next/link";
+import BrandCarousel from "../Carousel/BrandCarousel";
 
 export const ArticleHome = ({ data }) => {
   const [news, setNews] = useState();
@@ -31,6 +32,35 @@ export const ArticleHome = ({ data }) => {
   const month = String(date.getMonth() + 1).padStart(2, "0");
   const year = String(date.getFullYear()).slice(-2);
   const formattedDate = `${day}/${month}/${year}`;
+
+
+
+
+  const bannerImages = [
+    {
+      src: "/banner/acko-horizontal-banner.png",
+      link: "https://offer.mvmtracking.com/api/clicks?campaign_id=526&pub_id=17&originalClick={}&sub1={your_sub}",
+    },
+    {
+      src: "/banner/acko-horizontal-banner-2.png",
+      link: "https://offer.mvmtracking.com/api/clicks?campaign_id=526&pub_id=17&originalClick={}&sub1={your_sub}",
+    },
+    {
+      src: "/banner/acko-horizontal-banner-3.png",
+      link: "https://offer.mvmtracking.com/api/clicks?campaign_id=526&pub_id=17&originalClick={}&sub1={your_sub}",
+    },
+  ]
+
+
+
+
+  //  const bannerImagesMobile = [
+  //   { src: "/brandbanner/mobile/A-HB.png", link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=" },
+  //   { src: "/brandbanner/mobile/L-HB.png", link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=" },
+  //   { src: "/brandbanner/mobile/M&S-HB.png", link:"https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=" },
+  //   { src: "/brandbanner/mobile/N-HB.png", link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=" },
+  //   { src: "/brandbanner/mobile/RT-HB.png", link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=" },
+  // ];
 
   const jsonLd = {
     "@context": "https://schema.org/",
@@ -88,7 +118,7 @@ export const ArticleHome = ({ data }) => {
   // ----------------- ✅ SCHEMA LOGIC END -----------------
 
   return (
-    <div className="w-full py-6 bg-gray-50">
+    <div className="w-full  bg-gray-50">
       {/* ✅ Structured Data Scripts */}
       <script
         type="application/ld+json"
@@ -104,6 +134,18 @@ export const ArticleHome = ({ data }) => {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
+
+       <div className="hidden md:block max-w-[1500px] mx-auto pb-2">
+            <BrandCarousel items={bannerImages} />
+          </div>
+
+          {/* Mobile */}
+          {/* <div className="block md:hidden max-w-[1500px] mx-auto p-4">
+            <MobileBrandCrousel items={bannerImagesMobile} />
+          </div> */}
+
+
+
 
       {/* Mobile Ad (Top)
       <div className="md:hidden w-full mb-4 px-4">

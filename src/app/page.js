@@ -1,4 +1,6 @@
 import Home from "@/components/Home/Home";
+import MainPopDynamic from "@/components/popup/MainPopDynamic";
+import MainPopup from "@/components/popup/MainPopup";
 import DailyNewzMailPopup from "@/components/popup/registerpopup";
 
 // ✅ Static SEO Metadata for dailynewzmail.com
@@ -46,6 +48,8 @@ export default function Page() {
     <>
       <Home />
         <DailyNewzMailPopup />
+        {/* <MainPopDynamic/> */}
+        <MainPopup/>
     </>
   );
 }

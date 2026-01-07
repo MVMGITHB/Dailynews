@@ -45,7 +45,7 @@ useEffect(() => {
       const ads = res.data?.data?.[0];
       if (!ads) return;
 
-      const baseImageUrl = "https://api.shopsmaart.com";
+      const baseImageUrl = `${base_url}`;
 
       const formattedBanners = ads.images.map((img) => ({
         src: baseImageUrl + img,

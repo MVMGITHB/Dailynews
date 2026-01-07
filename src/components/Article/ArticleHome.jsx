@@ -9,10 +9,13 @@ import TopPicks from "../Hero/TopPicks";
 import Image from "next/image";
 import Link from "next/link";
 import BrandCarousel from "../Carousel/BrandCarousel";
+import MobileBrandCrousel from "../Carousel/MobileBrandCrousel";
 
 export const ArticleHome = ({ data }) => {
   const [news, setNews] = useState();
-  const[bannersData , setBannersData] = useState();
+ const [bannersData, setBannersData] = useState([]);
+const [sideBannersData, setSideBannersData] = useState([]);
+
 
   const fetchdata = async () => {
     try {
@@ -40,19 +43,25 @@ useEffect(() => {
     try {
       const res = await axios.get(`${base_url}/api/ads`);
 
-      console.log("Banners API response:", res.data);
-
       const ads = res.data?.data?.[0];
       if (!ads) return;
 
       const baseImageUrl = `${base_url}`;
 
-      const formattedBanners = ads.images.map((img) => ({
+      // MAIN BANNERS
+      const mainBanners = ads.images.map((img) => ({
         src: baseImageUrl + img,
         link: ads.linkArray?.[0] || "#",
       }));
 
-      setBannersData(formattedBanners);
+      // SIDE / MOBILE BANNERS
+      const sideBanners = ads.sideImages.map((img) => ({
+        src: baseImageUrl + img,
+        link: ads.sideLinkArray?.[0] || "#",
+      }));
+
+      setBannersData(mainBanners);
+      setSideBannersData(sideBanners);
     } catch (err) {
       console.error("Banners API error:", err);
     }
@@ -172,9 +181,9 @@ useEffect(() => {
           </div>
 
           {/* Mobile */}
-          {/* <div className="block md:hidden max-w-[1500px] mx-auto p-4">
-            <MobileBrandCrousel items={bannerImagesMobile} />
-          </div> */}
+          <div className="block md:hidden max-w-[1500px] mx-auto p-4">
+            <MobileBrandCrousel items={sideBannersData} />
+          </div>
 
 
 

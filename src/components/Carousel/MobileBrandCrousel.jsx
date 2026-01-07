@@ -3,47 +3,42 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function MobileBrandCrousel({ items }) {
+export default function MobileBrandCrousel({ items = [] }) {
   const [current, setCurrent] = useState(0);
-  const [autoPlay, setAutoPlay] = useState(true);
   const [loaded, setLoaded] = useState(false);
 
-  // Auto slide
   useEffect(() => {
-    if (!autoPlay || !loaded) return;
+    if (!loaded || items.length <= 1) return;
+
     const interval = setInterval(() => {
-      nextSlide();
+      setCurrent((prev) => (prev + 1) % items.length);
     }, 4000);
+
     return () => clearInterval(interval);
-  }, [current, autoPlay, loaded]);
+  }, [loaded, items.length]);
 
-  const nextSlide = () => {
-    setCurrent((prev) => (prev + 1) % items.length);
-  };
-
-  const prevSlide = () => {
-    setCurrent((prev) => (prev - 1 + items.length) % items.length);
-  };
+  if (!items.length) return null;
 
   return (
-    <div className="relative w-full aspect-[16/6] bg-gray-100  overflow-hidden">
+    <div className="relative w-full aspect-[16/6] bg-gray-100 overflow-hidden">
 
-      {/* SLIDE WRAPPER */}
       <div
         className="flex h-full transition-transform duration-700"
-        style={{ transform: loaded ? `translateX(-${current * 100}%)` : "none" }}
+        style={{
+          transform: loaded ? `translateX(-${current * 100}%)` : "none",
+        }}
       >
         {items.map((item, index) => (
           <Link
             key={index}
-            href={item.link ?? "#"} // fallback link
-            className="relative min-w-full h-full block"
-             target="_blank"
-          rel="noopener noreferrer"
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative min-w-full h-full"
           >
             <Image
               src={item.src}
-              alt="carousel-banner"
+              alt="mobile-banner"
               fill
               onLoadingComplete={() => setLoaded(true)}
               className="object-cover"
@@ -52,29 +47,13 @@ export default function MobileBrandCrousel({ items }) {
         ))}
       </div>
 
-      {/* LEFT ARROW */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/70 text-white p-1 rounded"
-      >
-        ‹
-      </button>
-
-      {/* RIGHT ARROW */}
-      <button
-        onClick={nextSlide}
-        className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/70 text-white p-1 rounded"
-      >
-        ›
-      </button>
-
       {/* DOTS */}
-      <div className="absolute bottom-3 w-full flex justify-center gap-2">
+      <div className="absolute bottom-2 w-full flex justify-center gap-2">
         {items.map((_, index) => (
           <div
             key={index}
             onClick={() => setCurrent(index)}
-            className={`w-4 h-2 rounded-full cursor-pointer border border-black ${
+            className={`w-3 h-2 rounded-full border border-black cursor-pointer ${
               current === index ? "bg-black" : "bg-white"
             }`}
           />

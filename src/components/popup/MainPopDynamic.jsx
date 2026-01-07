@@ -18,12 +18,12 @@ export default function MainPopDynamic() {
   useEffect(() => {
     const getPopup = async () => {
       try {
-        const res = await axios.get(
-          "http://localhost:5002/api/popup/getByWebsite/dailynews"
-        );
-        //  const res = await axios.get(
-        //   "https://api.shopsmaart.com/api/popup/getByWebsite/dailynews"
+        // const res = await axios.get(
+        //   "http://localhost:5002/api/popup/getByWebsite/dailynews"
         // );
+         const res = await axios.get(
+          "https://api.shopsmaart.com/api/popup/getByWebsite/dailynews"
+        );
 
         console.log("Popup API response:", res.data);
         setPopup(res.data);

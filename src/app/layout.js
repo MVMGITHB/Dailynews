@@ -7,6 +7,7 @@ import BreadcrumbSchema from "@/components/Seo/breadcrumb";
 import DailyNewzMailPopup from "@/components/popup/registerpopup";
 import Breadcrumb from "@/components/Breadcrumb/BreadCrumbVisible";
 import MainPopup from "@/components/popup/MainPopup";
+import MainPopDynamic from "@/components/popup/MainPopDynamic";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -63,7 +64,9 @@ export default function RootLayout({ children }) {
           <div className="flex flex-col min-h-screen">
             <Navbar />
 
-            <MainPopup/>
+            {/* <MainPopup/> */}
+
+           <MainPopDynamic/>
             <BreadcrumbSchema />
             <Breadcrumb />
             <main className="flex-grow">{children}</main>

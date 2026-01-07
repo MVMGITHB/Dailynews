@@ -39,15 +39,15 @@ export const ArticleHome = ({ data }) => {
   const bannerImages = [
     {
       src: "/banner/acko-horizontal-banner.png",
-      link: "https://offer.mvmtracking.com/api/clicks?campaign_id=526&pub_id=17&originalClick={}&sub1={your_sub}",
+      link: " https://offer.mvmtracking.com/api/clicks?campaign_id=520&pub_id=17&originalClick={}&sub1={your_sub}",
     },
     {
       src: "/banner/acko-horizontal-banner-2.png",
-      link: "https://offer.mvmtracking.com/api/clicks?campaign_id=526&pub_id=17&originalClick={}&sub1={your_sub}",
+      link: " https://offer.mvmtracking.com/api/clicks?campaign_id=520&pub_id=17&originalClick={}&sub1={your_sub}",
     },
     {
       src: "/banner/acko-horizontal-banner-3.png",
-      link: "https://offer.mvmtracking.com/api/clicks?campaign_id=526&pub_id=17&originalClick={}&sub1={your_sub}",
+      link: " https://offer.mvmtracking.com/api/clicks?campaign_id=520&pub_id=17&originalClick={}&sub1={your_sub}",
     },
   ]
 

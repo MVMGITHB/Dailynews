@@ -12,6 +12,7 @@ import BrandCarousel from "../Carousel/BrandCarousel";
 
 export const ArticleHome = ({ data }) => {
   const [news, setNews] = useState();
+  const[bannersData , setBannersData] = useState();
 
   const fetchdata = async () => {
     try {
@@ -33,6 +34,37 @@ export const ArticleHome = ({ data }) => {
   const year = String(date.getFullYear()).slice(-2);
   const formattedDate = `${day}/${month}/${year}`;
 
+
+useEffect(() => {
+  const getAdsBanners = async () => {
+    try {
+      const res = await axios.get(`${base_url}/api/ads`);
+
+      console.log("Banners API response:", res.data);
+
+      const ads = res.data?.data?.[0];
+      if (!ads) return;
+
+      const baseImageUrl = "https://api.shopsmaart.com";
+
+      const formattedBanners = ads.images.map((img) => ({
+        src: baseImageUrl + img,
+        link: ads.linkArray?.[0] || "#",
+      }));
+
+      setBannersData(formattedBanners);
+    } catch (err) {
+      console.error("Banners API error:", err);
+    }
+  };
+
+  getAdsBanners();
+}, []);
+
+
+
+
+  console.log("Banners Data:", bannersData);
 
 
 
@@ -136,7 +168,7 @@ export const ArticleHome = ({ data }) => {
       )}
 
        <div className="hidden md:block max-w-[1500px] mx-auto pb-2">
-            <BrandCarousel items={bannerImages} />
+            <BrandCarousel items={bannersData} />
           </div>
 
           {/* Mobile */}

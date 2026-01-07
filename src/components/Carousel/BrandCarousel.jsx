@@ -26,6 +26,9 @@ export default function BrandCarousel({ items = [] }) {
     setCurrent((prev) => (prev - 1 + items.length) % items.length);
   };
 
+
+  console.log("BrandCarousel items:", items);
+
   if (!items.length) return null;
 
   return (

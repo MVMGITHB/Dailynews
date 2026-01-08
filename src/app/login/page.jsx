@@ -4,7 +4,7 @@ export const metadata = {
   title: "Login | Top5Shots",
   description: "Login to your Top5Shots account",
   alternates: {
-    canonical: "https://top5shots.com/login",
+    canonical: "https://dailynewzmail.com/login",
   },
 };
 

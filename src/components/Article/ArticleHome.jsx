@@ -41,7 +41,7 @@ const [sideBannersData, setSideBannersData] = useState([]);
 useEffect(() => {
   const getAdsBanners = async () => {
     try {
-      const res = await axios.get(`${base_url}/api/ads`);
+      const res = await axios.get("https://api.dailynewzmail.com/api/ads/getAdsByWebsite/dailynews");
 
       const ads = res.data?.data?.[0];
       if (!ads) return;
@@ -176,7 +176,7 @@ useEffect(() => {
         />
       )}
 
-       <div className="hidden md:block max-w-[1500px] mx-auto pb-2">
+          <div className="hidden md:block max-w-[1500px] mx-auto pb-2">
             <BrandCarousel items={bannersData} />
           </div>
 

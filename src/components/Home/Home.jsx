@@ -9,18 +9,31 @@ import { base_url } from "../Helper/helper";
 import axios from "axios";
 import Image from "next/image"; 
 
-const Home = () => {
-  const [news, setNews] = useState();
-  const fetchdata = async () => {
-    try {
-      const res = await axios.get(`${base_url}/api/blog/getAllBlog`);
-      setNews(res.data);
-    } catch (error) {}
-  };
+const Home = ( {news} ) => {
+
+  // console.log("News data in Home component:", news);
+
+
+  const [newsData, setNewsData] = useState([]);
 
   useEffect(() => {
-    fetchdata();
-  }, []);
+    setNewsData(news);
+  }, [news]);
+
+
+
+  // setNews(news);
+
+  // const fetchdata = async () => {
+  //   try {
+  //     const res = await axios.get(`${base_url}/api/blog/getAllBlog`);
+  //     setNews(res.data);
+  //   } catch (error) {}
+  // };
+
+  // useEffect(() => {
+  //   fetchdata();
+  // }, [news]);
 
   return (
     <>
@@ -51,7 +64,7 @@ const Home = () => {
               height={200}
             />
           </a>
-          <TopPicks news={news} />
+          <TopPicks news={newsData} />
 
           {/* Three Horizontal Lines Below */}
           <div className="mt-4 space-y-1">
@@ -63,12 +76,18 @@ const Home = () => {
 
         {/* Center - FirstHero */}
         <div className="md:col-span-2">
-          <FirstHero news={news} />
+
+          {
+            news?(<FirstHero news={newsData} />)  :<div>Loading...</div>
+          }
+          {/* <FirstHero news={news} /> */}
+
+
         </div>
 
         {/* Right - Latest News */}
         <div className="md:col-span-1">
-          <LatestNews news={news} />
+          <LatestNews news={newsData} />
           <div className="mt-4 space-y-1">
             <hr className="h-px bg-gray-400 border-0" />
             <hr className="h-px bg-gray-400 border-0" />
@@ -108,7 +127,7 @@ const Home = () => {
       </div>
 
       <div className="py-4">
-        <Trending news={news} />
+        <Trending news={newsData} />
       </div>
       <div>
         <Missed />

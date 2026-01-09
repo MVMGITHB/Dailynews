@@ -1,7 +1,9 @@
+import { base_url } from "@/components/Helper/helper";
 import Home from "@/components/Home/Home";
 import MainPopDynamic from "@/components/popup/MainPopDynamic";
 import MainPopup from "@/components/popup/MainPopup";
 import DailyNewzMailPopup from "@/components/popup/registerpopup";
+import axios from "axios";
 
 // ✅ Static SEO Metadata for dailynewzmail.com
 export const metadata = {
@@ -43,13 +45,26 @@ export const metadata = {
   },
 };
 
-export default function Page() {
+
+
+export default async function Page() {
+
+  let news = [];
+
+  try {
+    const res = await axios.get(`${base_url}/api/blog/getAllBlog`);
+    news = res.data;
+
+    // console.log("News fetched on server:", news);
+  } catch (error) {
+    console.error("API error:", error);
+  }
+
   return (
     <>
-      <Home />
-        <DailyNewzMailPopup />
-        {/* <MainPopDynamic/> */}
-        <MainPopup/>
+      <Home news={news} />
+      <DailyNewzMailPopup />
+      <MainPopup />
     </>
   );
 }

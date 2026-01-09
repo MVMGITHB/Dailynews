@@ -25,6 +25,8 @@ const FirstHero = ({news}) => {
           <span className="text-sm font-semibold text-red-600">Live</span>
         </div>
 
+       
+
         {/* Main Headline and Image */}
         <div className="mb-4">
           <Link href={`/${firstArticle?.category?.slug}/${firstArticle?.slug}`}>

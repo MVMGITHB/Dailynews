@@ -62,6 +62,8 @@ export default async function Page() {
 
   return (
     <>
+
+   
       <Home news={news} />
       <DailyNewzMailPopup />
       <MainPopup />

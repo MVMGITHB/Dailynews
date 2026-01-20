@@ -1,89 +1,87 @@
 import AuthorPage from "@/components/authorSection/authorProfile";
 import { base_url } from "@/components/Helper/helper";
+import axios from "axios";
 
 export async function generateMetadata({ params }) {
-  const slug = await params.slug;
-  const baseUrl = "https://dailynewzmail.com/";
+  const { slug } = await params; // ✅ REQUIRED
 
+  // console.log("Slug is " , slug);
   try {
-    const res = await fetch(`${base_url}/singleUserbyslug/${slug}`, {
-      next: { revalidate: 60 },
-    });
+   const response = await axios.get(
+  `${base_url}/api/auth/singleUserbyslug/${slug}`
+);
 
-    if (!res.ok) {
-      return {
-        title: "Author Not Found | Daily Newz Mail",
-        description: "No author information available at the moment.",
-        alternates: {
-          canonical: `${baseUrl}/author/${slug}`,
-        },
-      };
-    }
 
-    const data = await res.json();
-    const author = data[0];
+const author = response.data?.[0]; // use directly
+
+
+// console.log("author", author); // this works
+
 
     if (!author) {
       return {
-        title: "Author Not Found | Daily Newz Mail",
+        title: "Author Not Found | Daily News Mail",
         description: "No author information available at the moment.",
         alternates: {
-          canonical: `${baseUrl}/author/${slug}`,
+          canonical: `${base_url}/author/${slug}`,
         },
       };
     }
 
-    const fullName = `${author.firstName} ${author.lastName}`;
+    const fullName = `${author?.name}`;
     const bio =
       author.shortBio ||
-      `Explore articles and insights by ${fullName} on Daily Newz Mail.`;
-    const imageUrl = author.image
-      ? author.image.startsWith("http")
-        ? author.image
-        : `${baseUrl}${author.image}`
-      : `${baseUrl}/images/default-user.png`;
+      `Read articles and insights by ${fullName} on Daily News Mail.`;
+
+    const imageUrl = author?.image
+      ? author?.image.startsWith("http")
+        ? author?.image
+        : `${base_url}${author?.image}`
+      : `${base_url}/images/default-user.png`;
 
     return {
-      title: `${fullName} | Author at Daily Newz Mail`,
-      description: bio,
-      keywords: [
-        fullName,
-        "Daily Newz Mail authors",
-        "tech blog authors",
-        "curated content writer",
-        "insights by " + fullName,
-      ],
+      title: `${fullName} – Articles & Insights | Daily News Mail`,
+      description:  `Explore articles, insights, and latest news by ${fullName} on Daily News Mail.`,
+
       alternates: {
-        canonical: `${baseUrl}/${slug}`,
+        canonical: `${base_url}/author/${slug}`,
       },
+
       openGraph: {
-         title: `${fullName} | Author at Daily Newz Mail`,
-         description: bio,
-         url: `${baseUrl}/${slug}`,
-        siteName: "DailyNewzMail",
+        title: `${fullName} – Articles & Insights | Daily News Mail`,
+      description:  `Explore articles, insights, and latest news by ${fullName} on Daily News Mail.`,
+        url: `${base_url}/author/${slug}`,
+        siteName: "Daily News Mail",
+        type: "profile",
         images: [
           {
-            url: `${base_url}${author?.image}`, // 🔁 Replace with actual OG image URL
+            url: `${base_url}${author?.image}`,
             width: 1200,
             height: 630,
-            alt: "DailyNewzMail Hero Banner",
+            alt: `${fullName} – Author at Daily News Mail`,
           },
         ],
-        type: "website",
+      },
+
+      twitter: {
+        card: "summary_large_image",
+        title: `${fullName} | Daily News Mail`,
+        description: `Read articles and insights by ${fullName} on Daily News Mail.`,
+        
       },
     };
-  } catch (error) {
+  } catch {
     return {
-      title: "Author Profile | DailyNews",
-      description:
-        "Author information could not be loaded due to a network issue.",
+      title: "Author Profile | Daily News Mail",
+      description: "Author information could not be loaded at this time.",
       alternates: {
-        canonical: `${baseUrl}${slug}`,
+        canonical: `${base_url}/author/${slug}`,
       },
     };
   }
 }
 
-export default function Page({ params }) {
-  return <AuthorPage slug={params?.slug} />;
+export default async function Page({ params }) {
+  const { slug } = await params; // ✅ REQUIRED
+  return <AuthorPage slug={slug} />;
 }

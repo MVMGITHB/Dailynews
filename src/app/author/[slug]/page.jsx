@@ -44,13 +44,13 @@ const author = response.data?.[0]; // use directly
       description:  `Explore articles, insights, and latest news by ${fullName} on Daily News Mail.`,
 
       alternates: {
-        canonical: `${base_url}/author/${slug}`,
+        canonical: `https://dailynewzmail.com/author/author/${slug}`,
       },
 
       openGraph: {
         title: `${fullName} – Articles & Insights | Daily News Mail`,
       description:  `Explore articles, insights, and latest news by ${fullName} on Daily News Mail.`,
-        url: `${base_url}/author/${slug}`,
+        url: `https://dailynewzmail.com/author/author/${slug}`,
         siteName: "Daily News Mail",
         type: "profile",
         images: [
@@ -75,7 +75,7 @@ const author = response.data?.[0]; // use directly
       title: "Author Profile | Daily News Mail",
       description: "Author information could not be loaded at this time.",
       alternates: {
-        canonical: `${base_url}/author/${slug}`,
+        canonical: `https://dailynewzmail.com/author/author/${slug}`,
       },
     };
   }

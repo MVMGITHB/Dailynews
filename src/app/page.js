@@ -28,7 +28,7 @@ export const metadata = {
     siteName: "DailyNewzMail",
     images: [
       {
-        url: "https://dailynewzmail.com/images/og-banner.png", // 🔁 Replace with actual OG image URL
+        url: "/logo.png", // 🔁 Replace with actual OG image URL
         width: 1200,
         height: 630,
         alt: "DailyNewzMail Hero Banner",
@@ -36,6 +36,8 @@ export const metadata = {
     ],
     type: "website",
   },
+
+  
   twitter: {
     card: "summary_large_image",
     title: "DailyNewzMail - Top News, Trends & Picks",
@@ -55,7 +57,7 @@ export default async function Page() {
     const res = await axios.get(`${base_url}/api/blog/getAllBlog`);
     news = res.data;
 
-    // console.log("News fetched on server:", news);
+    // console.log("News fetched on kjhgvcfgvhjugjkhvgbhjnknbv server:", news[0]);
   } catch (error) {
     console.error("API error:", error);
   }

@@ -14,6 +14,7 @@ const Footer = () => {
               src="/logo.png"
               alt="Logo"
               className="w-28 h-28 object-cover"
+             
             />
           </Link>
           <p className="text-sm mt-2">

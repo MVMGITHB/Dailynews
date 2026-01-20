@@ -19,12 +19,12 @@ export async function generateMetadata({ params }) {
       description: data?.subtitle || "Latest article from dailynewzmail",
       metadataBase: new URL("https://dailynewzmail.com"),
       alternates: {
-        canonical: "./",
+        canonical: `https://dailynewzmail.com/travel/${slugName}`,
       },
       openGraph: {
         title: data?.title,
         description: data?.subtitle,
-        url: `https://dailynewzmail.com/blog/${slugName}`,
+        url: `https://dailynewzmail.com/travel/${slugName}`,
         type: "article",
         siteName: "dailynewzmail",
         images: [

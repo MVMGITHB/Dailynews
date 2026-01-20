@@ -1,19 +1,15 @@
 import AuthorPage from "@/components/authorSection/authorProfile";
 import { base_url } from "@/components/Helper/helper";
 
-
- 
-
- 
 export async function generateMetadata({ params }) {
   const slug = await params.slug;
   const baseUrl = "https://dailynewzmail.com/";
- 
+
   try {
     const res = await fetch(`${base_url}/singleUserbyslug/${slug}`, {
       next: { revalidate: 60 },
     });
- 
+
     if (!res.ok) {
       return {
         title: "Author Not Found | Daily Newz Mail",
@@ -23,10 +19,10 @@ export async function generateMetadata({ params }) {
         },
       };
     }
- 
+
     const data = await res.json();
     const author = data[0];
- 
+
     if (!author) {
       return {
         title: "Author Not Found | Daily Newz Mail",
@@ -36,7 +32,7 @@ export async function generateMetadata({ params }) {
         },
       };
     }
- 
+
     const fullName = `${author.firstName} ${author.lastName}`;
     const bio =
       author.shortBio ||
@@ -46,7 +42,7 @@ export async function generateMetadata({ params }) {
         ? author.image
         : `${baseUrl}${author.image}`
       : `${baseUrl}/images/default-user.png`;
- 
+
     return {
       title: `${fullName} | Author at Daily Newz Mail`,
       description: bio,
@@ -60,6 +56,21 @@ export async function generateMetadata({ params }) {
       alternates: {
         canonical: `${baseUrl}/${slug}`,
       },
+      openGraph: {
+         title: `${fullName} | Author at Daily Newz Mail`,
+         description: bio,
+         url: `${baseUrl}/${slug}`,
+        siteName: "DailyNewzMail",
+        images: [
+          {
+            url: `${base_url}${author?.image}`, // 🔁 Replace with actual OG image URL
+            width: 1200,
+            height: 630,
+            alt: "DailyNewzMail Hero Banner",
+          },
+        ],
+        type: "website",
+      },
     };
   } catch (error) {
     return {
@@ -72,9 +83,7 @@ export async function generateMetadata({ params }) {
     };
   }
 }
- 
+
 export default function Page({ params }) {
   return <AuthorPage slug={params?.slug} />;
 }
- 
- 

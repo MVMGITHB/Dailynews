@@ -25,13 +25,13 @@ const Navbar = () => {
               <div className="hidden sm:block">
 
            <Link href="/">
-            <img src="/logo.png" alt="" className="w-36 h-28 object-cover" />
+            <img src="/logo.png" alt="Logo" className="w-36 h-28 object-cover" />
             </Link>
           </div>
 
           <div className="w-full flex justify-between items-center sm:hidden py-3">
             <Link href="/">
-            <img src="/logo.png" alt="" className="w-20 h-14 object-cover" />
+            <img src="/logo.png" alt="Logo" className="w-20 h-14 object-cover" />
             </Link>
             <button
               className="text-2xl text-[#B00020]"

@@ -4,6 +4,22 @@ export const metadata = {
   alternates: {
     canonical: "https://dailynewzmail.com/advertise",
   },
+   openGraph: {
+    title: "Advertise with Us | DailyNewzMail",
+    description:
+      "Promote your brand on DailyNewzMail and reach a wide audience interested in news, finance, and more.",
+    url: "https://dailynewzmail.com/advertise",
+    siteName: "DailyNewzMail",
+    images: [
+      {
+        url: "/logo.png", // 🔁 Replace with actual OG image URL
+        width: 1200,
+        height: 630,
+        alt: "DailyNewzMail Hero Banner",
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function AdvertisePage() {

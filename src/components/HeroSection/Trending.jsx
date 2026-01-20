@@ -10,9 +10,9 @@ function Trending({news}) {
           <hr className="w-20 sm:w-32 h-px bg-gray-400 border-0" />
         </div>
 
-        <h5 className="text-2xl font-bold text-[#B00023] text-center">
+        <h3 className="text-2xl font-bold text-[#B00023] text-center">
           Trending
-        </h5>
+        </h3>
 
         <div className="flex items-center gap-1">
           <hr className="w-20 sm:w-32 h-px bg-gray-400 border-0" />

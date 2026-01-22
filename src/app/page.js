@@ -4,6 +4,7 @@ import MainPopDynamic from "@/components/popup/MainPopDynamic";
 import MainPopup from "@/components/popup/MainPopup";
 import DailyNewzMailPopup from "@/components/popup/registerpopup";
 import axios from "axios";
+import Script from "next/script";
 
 // ✅ Static SEO Metadata for dailynewzmail.com
 export const metadata = {
@@ -64,6 +65,36 @@ export default async function Page() {
 
   return (
     <>
+
+
+     <Script
+        id="organization-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "@id": "https://dailynewzmail.com/#organization",
+            "name": "DailyNewzMail",
+            "url": "https://dailynewzmail.com",
+            "logo": "https://dailynewzmail.com/logo.png",
+            "sameAs": [
+              "https://www.facebook.com/dailynewzmail",
+              "https://twitter.com/dailynewzmail",
+              "https://www.instagram.com/dailynewzmail",
+              "https://www.linkedin.com/company/dailynewzmail"
+            ],
+            "description":
+              "DailyNewzMail delivers the latest news, trending stories, and expert picks from India and around the world.",
+            "foundingDate": "2023",
+            "publisher": {
+              "@type": "Organization",
+              "name": "DailyNewzMail"
+            }
+          }),
+        }}
+      />
 
    
       <Home news={news} />

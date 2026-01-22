@@ -1,6 +1,7 @@
 import AuthorPage from "@/components/authorSection/authorProfile";
 import { base_url } from "@/components/Helper/helper";
 import axios from "axios";
+import Script from "next/script";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params; // ✅ REQUIRED
@@ -83,5 +84,66 @@ const author = response.data?.[0]; // use directly
 
 export default async function Page({ params }) {
   const { slug } = await params; // ✅ REQUIRED
-  return <AuthorPage slug={slug} />;
+
+  let author = null;
+
+  try {
+    const response = await axios.get(
+      `${base_url}/api/auth/singleUserbyslug/${slug}`
+    );
+    author = response.data?.[0];
+  } catch (error) {
+    console.error("Author fetch error:", error);
+  }
+
+  const fullName = author?.name || "Author";
+  const imageUrl = author?.image
+    ? author.image.startsWith("http")
+      ? author.image
+      : `${base_url}${author.image}`
+    : `${base_url}/images/default-user.png`;
+
+  return(
+    <>
+
+
+    {author && (
+        <Script
+          id="author-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "@id": `https://dailynewzmail.com/author/${slug}`,
+              "name": fullName,
+              "url": `https://dailynewzmail.com/author/${slug}`,
+              "image": imageUrl,
+              "description":
+                author.shortBio ||
+                `Author at Daily News Mail contributing news and articles.`,
+              "jobTitle": "Author",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Daily News Mail",
+                "url": "https://dailynewzmail.com",
+              },
+              "sameAs": [
+                author.facebook,
+                author.twitter,
+                author.linkedin,
+                author.instagram,
+              ].filter(Boolean),
+            }),
+          }}
+        />
+      )}
+
+
+     <AuthorPage slug={slug} />;
+    </>
+
+
+  )
 }

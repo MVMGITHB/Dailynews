@@ -24,7 +24,7 @@ const news123 = pathname === "new123";
       {/* Navbar hidden on /news/[slug] */}
       {news123 && <Navbar />}
 
-      <MainPopDynamic />
+     { news123 && < MainPopDynamic />}
       <BreadcrumbSchema />
      {news123 && <Breadcrumb />}
 

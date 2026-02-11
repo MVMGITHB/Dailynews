@@ -7,7 +7,7 @@ import React from 'react'
 const page = () => {
   return (
     <div>
-        <ArabicNavbar/>
+        {/* <ArabicNavbar/> */}
         <ArabicHero/>
         <ArabicThankYou/>
         <ArabicFooter/>

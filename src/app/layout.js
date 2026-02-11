@@ -1,4 +1,3 @@
-"use client";
 import { Geist, Geist_Mono, Prata } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Header/Navbar";
@@ -9,7 +8,6 @@ import DailyNewzMailPopup from "@/components/popup/registerpopup";
 import Breadcrumb from "@/components/Breadcrumb/BreadCrumbVisible";
 import MainPopup from "@/components/popup/MainPopup";
 import MainPopDynamic from "@/components/popup/MainPopDynamic";
-import { usePathname } from "next/navigation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,7 +24,6 @@ const prata = Prata({
   subsets: ["latin"],
   variable: "--font-prata",
 });
-
 export const metadata = {
   title: "DailyNews",
   description: "Get Latest News and Updates",
@@ -36,12 +33,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-
-  const pathname = usePathname();
-
-  console.log("Current Pathname: ", pathname);
-
-
   return (
     <html lang="en">
       <head>

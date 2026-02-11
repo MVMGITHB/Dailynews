@@ -10,27 +10,22 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export default function ClientLayout({ children }) {
   const pathname = usePathname();
-//   console.log("Current pathname:", pathname); // Debugging statement
 
-  // hide navbar only on news article page
-//   const isNewsArticle = /^\/news\/[^/]+$/.test(pathname);
-
-const news123 = pathname === "new123";
+  // hide layout ONLY on /new123 page
+  const news123 = pathname !== "/new123";
 
   return (
     <div className="flex flex-col min-h-screen">
       <GoogleAnalytics />
 
-      {/* Navbar hidden on /news/[slug] */}
       {news123 && <Navbar />}
-
-     { news123 && < MainPopDynamic />}
+      {news123 && <MainPopDynamic />}
       <BreadcrumbSchema />
-     {news123 && <Breadcrumb />}
+      {news123 && <Breadcrumb />}
 
       <main className="flex-grow">{children}</main>
 
-    { news123 && <Footer />}
+      {news123 && <Footer />}
     </div>
   );
 }

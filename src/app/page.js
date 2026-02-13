@@ -58,7 +58,7 @@ export default async function Page() {
     const res = await axios.get(`${base_url}/api/blog/getAllBlog`);
     news = res.data;
 
-    console.log("News fetched on kjhgvcfgvhjugjkhvgbhjnknbv server:", news);
+    // console.log("News fetched on kjhgvcfgvhjugjkhvgbhjnknbv server:", news);
   } catch (error) {
     console.error("API error:", error);
   }

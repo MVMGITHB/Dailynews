@@ -17,6 +17,8 @@ export const ArticleHome = ({ data }) => {
 const [sideBannersData, setSideBannersData] = useState([]);
 
 
+  //  console.log("ArticleHome data prop:", data);
+
   const fetchdata = async () => {
     try {
       const res = await axios.get(`${base_url}/api/blog/getAllBlog`);

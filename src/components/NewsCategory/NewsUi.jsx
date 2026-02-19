@@ -54,7 +54,7 @@ function NewsUi({ url }) {
             {card.map((blog, index) => (
               <Link
                 key={blog._id || index}
-                href={`/${blog?.category?.slug}/${blog?.slug}?utm_source=dailynewzmail.com/&utm_medium=email&utm_campaign=${blog?.slug}`}
+                href={`/${blog?.category?.slug}/${blog?.slug}`}
                 className="group"
               >
                 <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden flex flex-col h-full">

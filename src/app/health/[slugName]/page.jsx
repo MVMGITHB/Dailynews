@@ -4,38 +4,51 @@ import axios from "axios";
 import Script from "next/script";
 
 const Base_url = "https://dailynewzmail.com/";
+async function getBlog(slugName) {
+  const res = await fetch(
+    `${base_url}/api/blog/getOneBlogByslug/${slugName}`,
+    {
+      next: { revalidate: 60 }, // SEO + caching
+    }
+  );
+
+  if (!res.ok) throw new Error("Failed to fetch");
+
+  return res.json();
+}
+
+
 
 export async function generateMetadata({ params }) {
-  const { slugName } = await params;
+  const { slugName } = params;
 
   try {
-    const response = await axios.get(
-      `${base_url}/api/blog/getOneBlogByslug/${slugName}`
-    );
-    const data = response.data;
+    const data = await getBlog(slugName);
 
     return {
-      title: data?.title || "dailynewzmail",
-      description: data?.subtitle || "Latest article from dailynewzmail",
       metadataBase: new URL("https://dailynewzmail.com"),
+
+      title: data?.title,
+      description: data?.subtitle,
+
       alternates: {
-        canonical: `https://dailynewzmail.com/health/${slugName}`,
+        canonical: `/health/${slugName}`, // NEVER put full url here
       },
+
       openGraph: {
-          title: data?.title || "dailynewzmail",
-        description: data?.subtitle || "Latest article from dailynewzmail",
-        url: `https://dailynewzmail.com/health/${slugName}`,
+        title: data?.title,
+        description: data?.subtitle,
+        url: `/health/${slugName}`,
         type: "article",
-        siteName: "dailynewzmail",
         images: [
           {
             url: `${base_url}${data?.image}`,
             width: 1200,
             height: 630,
-            alt: data?.title,
           },
         ],
       },
+
       twitter: {
         card: "summary_large_image",
         title: data?.title,
@@ -43,8 +56,7 @@ export async function generateMetadata({ params }) {
         images: [`${base_url}${data?.image}`],
       },
     };
-  } catch (error) {
-    console.error("SEO metadata error:", error);
+  } catch {
     return {
       title: "dailynewzmail",
       description: "Latest news, blogs and stories from dailynewzmail.",

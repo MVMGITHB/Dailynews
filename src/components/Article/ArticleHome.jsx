@@ -373,7 +373,7 @@ useEffect(() => {
           )}
 
           {/* Conclusion */}
-          {data?.conclusion && data?.conclusion.length > 0 && (
+          {data?.conclusion && data?.conclusion?.length > 0 && (
             <div>
               <h3 className="text-xl md:text-3xl font-bold text-gray-900 text-center">
                 Conclusion

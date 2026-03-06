@@ -12,7 +12,7 @@ const Authors = () => {
 
   const fetchAuthors = async () => {
     try {
-      const response = await axios.get(`${base_url}/api/auth/getAllAdmin`);
+      const response = await axios.get(`${base_url}/api/auth/getAllAdmins`);
       console.log("authors", response.data?.users);
 
       setAuthors(response.data?.users || []);

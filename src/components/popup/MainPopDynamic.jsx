@@ -25,10 +25,10 @@ export default function MainPopDynamic() {
           "https://api.shopsmaart.com/api/popup/getByWebsite/dailynews"
         );
 
-        console.log("Popup API response:", res.data);
+        // console.log("Popup API response:", res.data);
         setPopup(res.data);
       } catch (err) {
-        console.error("Popup API error:", err);
+        // console.error("Popup API error:", err);
       }
     };
 
@@ -54,7 +54,7 @@ export default function MainPopDynamic() {
      DEBUG LOG (OPTIONAL)
   =============================== */
   useEffect(() => {
-    console.log("Popup state updated:", popup);
+    // console.log("Popup state updated:", popup);
   }, [popup]);
 
   /* ===============================

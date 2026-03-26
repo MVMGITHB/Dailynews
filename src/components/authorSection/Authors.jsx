@@ -13,7 +13,7 @@ const Authors = () => {
   const fetchAuthors = async () => {
     try {
       const response = await axios.get(`${base_url}/api/auth/getAllAdmins`);
-      console.log("authors", response.data?.users);
+      // console.log("authors", response.data);
 
       setAuthors(response.data?.users || []);
     } catch (err) {
@@ -88,7 +88,7 @@ const Authors = () => {
              href={`/author/${author.slug}`} 
              className=" mt-5"
              rel="noopener noreferrer"
-             title="Go to view profile page"
+             title="Navigate to the Profile page."
              >
               <button className="w-full px-2 py-2 rounded-xl text-white cursor-pointer bg-[#211C84] hover:bg-[#221C84] transition font-medium">
                 View Profile

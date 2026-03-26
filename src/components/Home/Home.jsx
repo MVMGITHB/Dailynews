@@ -17,7 +17,7 @@ const Home = ({ news }) => {
   const secondArticle = news[1];
   const thirdArticle = news[2];
   const fourthArticle = news[3];
-  console.log("Home Component - News Data:",news);
+  // console.log("Home Component - News Data:",news);
 
   return (
     <>

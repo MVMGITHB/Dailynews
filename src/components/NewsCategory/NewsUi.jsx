@@ -17,7 +17,7 @@ function NewsUi({ url }) {
       setHeading(res?.data[0]?.category?.name);
       setCards(res.data);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 

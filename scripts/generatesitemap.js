@@ -22,7 +22,7 @@ const fetchCategories = async () => {
     const res = await axios.get(`${apiUrl}/api/catagory/get-categories`);
     return (res.data.categories || []).filter(cat => cat.status === 'Active');
   } catch (err) {
-    console.error('❌ Error fetching categories:', err.message);
+    // console.error('❌ Error fetching categories:', err.message);
     return [];
   }
 };
@@ -33,7 +33,7 @@ const fetchBlogs = async () => {
     const res = await axios.get(`${apiUrl}/api/blog/getAllBlog`);
     return (res.data.allblogs || []).filter(blog => blog.status === 'Active');
   } catch (err) {
-    console.error('❌ Error fetching blogs:', err.message);
+    // console.error('❌ Error fetching blogs:', err.message);
     return [];
   }
 };
@@ -52,7 +52,9 @@ const generateSitemap = async () => {
     `${baseUrl}/privacy-policy`,
     `${baseUrl}/terms-of-service`,
     `${baseUrl}/advertise`,
-    `${baseUrl}/help`,
+    `${baseUrl}/contact-us`,
+    `${baseUrl}/about-us`,
+
   ];
 
   // Add category URLs
@@ -81,7 +83,7 @@ ${urls
 
   try {
     fs.writeFileSync(sitemapPath, sitemapXml, 'utf8');
-    console.log('✅ Sitemap successfully generated at /public/sitemap.xml');
+    // console.log('✅ Sitemap successfully generated at /public/sitemap.xml');
   } catch (err) {
     console.error('❌ Failed to write sitemap.xml:', err.message);
   }

@@ -172,7 +172,7 @@ const COUNTRIES = [
 ];
 
 const ArabicForm = ({ page }) => {
-  console.log("Page is ", page);
+  // console.log("Page is ", page);
 
   const [form, setForm] = useState({
     title: "",
@@ -213,7 +213,7 @@ const ArabicForm = ({ page }) => {
       //     body: JSON.stringify(form),
       //   });
 
-      console.log("base Url is ", base_url);
+      // console.log("base Url is ", base_url);
 
       const res = await axios.post(
         `${base_url}/api/arabic/createPatient`,

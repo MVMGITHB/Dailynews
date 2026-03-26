@@ -75,7 +75,7 @@ useEffect(() => {
 
 
 
-  console.log("Banners Data:", bannersData);
+  // console.log("Banners Data:", bannersData);
 
 
 

@@ -1,4 +1,5 @@
 import Article from "@/components/Article/Article";
+import NotfoundPage from "@/components/ErrorPage404/NotfoundPage";
 import { base_url } from "@/components/Helper/helper";
 import axios from "axios";
 import Script from "next/script";
@@ -140,6 +141,6 @@ export default async function Page({ params }) {
     );
   } catch (error) {
     console.error("Error fetching article:", error);
-    return <div>Failed to load article.</div>;
+     return <NotfoundPage />;
   }
 }

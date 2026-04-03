@@ -19,7 +19,7 @@ const Missed = () => {
 
         {/* Trending Text */}
         <h3 className="text-2xl font-bold text-[#B00023] text-center">
-         Our Recent Favorites
+         Latest News
         </h3>
 
         {/* Right Horizontal Line */}

@@ -6,7 +6,7 @@ import LatestNews from "../Hero/LatestNews";
 import Missed from "../HeroSection/Missed";
 import axios from "axios";
 import TopPicks from "../Hero/TopPicks";
-import Image from "next/image";
+
 import Link from "next/link";
 import BrandCarousel from "../Carousel/BrandCarousel";
 import MobileBrandCrousel from "../Carousel/MobileBrandCrousel";
@@ -241,7 +241,7 @@ useEffect(() => {
           </h1>
             <div className="flex  justify-center  gap-4 pb-4">
             <div className="flex gap-2 md:flex-row justify-center">
-              <h3 className="text-lg text-gray-700">
+              <p className="text-lg text-gray-700">
                 Author:{" "}
                 <strong>
                   {" "}
@@ -254,14 +254,14 @@ useEffect(() => {
                     {data?.author?.name}
                   </Link>
                 </strong>
-              </h3>
+              </p>
               {/* <h3 className="text-lg text-gray-600">
                 Created At:{" "}
                 <strong>
                   {new Date(data?.author?.createdAt).toLocaleDateString()}
                 </strong>
               </h3> */}
-              <h3 className="text-lg text-gray-600">
+              <p className="text-lg text-gray-600">
                 Updated At:{" "}
                 <strong>
                   {/* {new Date(data?.author?.updatedAt).toLocaleDateString()} */}
@@ -273,7 +273,7 @@ useEffect(() => {
                 }).format(new Date(data?.createdAt))}
               </time>
                 </strong>
-              </h3>
+              </p>
             </div>
 
             {/* <div>

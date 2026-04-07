@@ -93,7 +93,7 @@ export default async function Page({ params }) {
     );
     author = response.data?.[0];
   } catch (error) {
-    console.error("Author fetch error:", error);
+    // console.error("Author fetch error:", error);
   }
 
   const fullName = author?.name || "Author";

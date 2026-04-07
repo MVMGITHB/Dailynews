@@ -27,7 +27,7 @@ export default function BrandCarousel({ items = [] }) {
   };
 
 
-  console.log("BrandCarousel items:", items);
+  // console.log("BrandCarousel items:", items);
 
   if (!items.length) return null;
 

@@ -24,7 +24,7 @@ const [sideBannersData, setSideBannersData] = useState([]);
       const res = await axios.get(`${base_url}/api/blog/getAllBlog`);
       setNews(res.data);
     } catch (error) {
-      console.error("Error fetching news:", error);
+      // console.error("Error fetching news:", error);
     }
   };
 
@@ -65,7 +65,7 @@ useEffect(() => {
       setBannersData(mainBanners);
       setSideBannersData(sideBanners);
     } catch (err) {
-      console.error("Banners API error:", err);
+      // console.error("Banners API error:", err);
     }
   };
 
@@ -105,52 +105,107 @@ useEffect(() => {
   //   { src: "/brandbanner/mobile/RT-HB.png", link: "https://offer.mvmtracking.com/api/clicks?campaign_id=488&pub_id=17&originalClick=" },
   // ];
 
-  const jsonLd = {
-    "@context": "https://schema.org/",
-    "@type": "Article",
-    headline: data?.title,
-    image: {
-      "@type": "ImageObject",
-      url: `${base_url}${data?.image}`,
-      width: 800,
-      height: 450,
-    },
-    author: {
-      "@type": "Person",
-      name: data?.author?.name,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: data?.author?.name,
-      logo: {
-        "@type": "ImageObject",
-        url: "publisherLogo",
-        width: "publisherLogoWidth",
-        height: "publisherLogoHeight",
-      },
-    },
-    datePublished: formattedDate,
-  };
+  
+  // const jsonLd = {
+  //   "@context": "https://schema.org/",
+  //   "@type": "Article",
+  //   headline: data?.title,
+  //   image: {
+  //     "@type": "ImageObject",
+  //     url: `${base_url}${data?.image}`,
+  //     width: 800,
+  //     height: 450,
+  //   },
+  //   author: {
+  //     "@type": "Person",
+  //     name: data?.author?.name,
+  //   },
+  //   publisher: {
+  //     "@type": "Organization",
+  //     name: data?.author?.name,
+  //     logo: {
+  //       "@type": "ImageObject",
+  //       url: "publisherLogo",
+  //       width: "publisherLogoWidth",
+  //       height: "publisherLogoHeight",
+  //     },
+  //   },
+  //   datePublished: formattedDate,
+  // };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: data?.faqs?.map((faq) => ({
-      "@type": "Question",
-      name: faq.ques,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.ans,
-      },
-    })),
-  };
+  // const faqSchema = {
+  //   "@context": "https://schema.org",
+  //   "@type": "FAQPage",
+  //   mainEntity: data?.faqs?.map((faq) => ({
+  //     "@type": "Question",
+  //     name: faq.ques,
+  //     acceptedAnswer: {
+  //       "@type": "Answer",
+  //       text: faq.ans,
+  //     },
+  //   })),
+  // };
+
+
+
+    const jsonLd =  {
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "@id": `https://dailynewzmail.com/${data?.category}/${data?.slug}#article`,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://dailynewzmail.com/${data?.category}/${data?.slug}`
+  },
+  "headline": data?.title,
+  "description": data?.mdesc,
+  "image": [
+    data?.image
+  ],
+  "author": {
+    "@type": "Person",
+    "name": data?.author?.name,
+    "url": `https://dailynewzmail.com/author/${data?.author?.slug}`,
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Daily Newz Mail",
+    "url": "https://dailynewzmail.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dailynewzmail.com/logo.png"
+    },
+    "sameAs": [
+      "https://www.facebook.com/",
+      "https://twitter.com/",
+      "https://www.instagram.com/"
+    ]
+  },
+  "datePublished": data?.createdAt,
+  "dateModified": data?.updatedAt,
+  "articleSection": data?.category?.name,
+  "keywords": data?.tags?.map(tag => tag.name).join(", "),
+  "wordCount": data?.content ? data.content.split(" ").length : 0,
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "articleBody": data?.content.replace(/<[^>]+>/g, ""),
+  "about": {
+    "@type": "Thing",
+    "name": data?.title
+  },
+  "mentions": [
+    {
+      "@type": "Thing",
+      "name": data?.category?.name
+    }
+  ]
+};
 
   const authorSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: `${data?.author?.name}`,
-    url: "https://example.com/about",
-    image: `${base_url}${data?.author?.image}`,
+    url: `https://dailynewzmail.com/author/${data?.author?.slug}`,
+    image: `https://dailynewzmail.com${data?.author?.image}`,
     sameAs: ["https://twitter.com/johndoe", "https://linkedin.com/in/johndoe"],
     jobTitle: "Content Writer",
     worksFor: {

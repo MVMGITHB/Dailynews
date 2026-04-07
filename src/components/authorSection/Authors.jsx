@@ -17,7 +17,7 @@ const Authors = () => {
 
       setAuthors(response.data?.users || []);
     } catch (err) {
-      console.error("Error fetching authors:", err);
+      // console.error("Error fetching authors:", err);
     }
   };
 

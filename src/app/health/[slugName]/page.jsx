@@ -138,7 +138,7 @@ export default async function Page({ params }) {
       </>
     );
   } catch (error) {
-    console.error("Error fetching article:", error);
+    // console.error("Error fetching article:", error);
      return <NotfoundPage />;
   }
 }

@@ -85,7 +85,7 @@ ${urls
     fs.writeFileSync(sitemapPath, sitemapXml, 'utf8');
     // console.log('✅ Sitemap successfully generated at /public/sitemap.xml');
   } catch (err) {
-    console.error('❌ Failed to write sitemap.xml:', err.message);
+    // console.error('❌ Failed to write sitemap.xml:', err.message);
   }
 };
 

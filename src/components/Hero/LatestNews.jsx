@@ -36,7 +36,7 @@ function LatestNews({ news }) {
                   <p className="text-lg font-medium hover:underline cursor-pointer">
                     {item?.title}
                   </p>
-                  <p className="text-xs underline uppercase font-bold text-gray-600">
+                  <p className="text-xs underline uppercase font-bold text-gray-600 break-all">
                     {item.source}
                   </p>
                 </div>

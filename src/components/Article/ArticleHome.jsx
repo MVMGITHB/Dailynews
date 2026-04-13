@@ -133,18 +133,18 @@ useEffect(() => {
   //   datePublished: formattedDate,
   // };
 
-  // const faqSchema = {
-  //   "@context": "https://schema.org",
-  //   "@type": "FAQPage",
-  //   mainEntity: data?.faqs?.map((faq) => ({
-  //     "@type": "Question",
-  //     name: faq.ques,
-  //     acceptedAnswer: {
-  //       "@type": "Answer",
-  //       text: faq.ans,
-  //     },
-  //   })),
-  // };
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: data?.faqs?.map((faq) => ({
+      "@type": "Question",
+      name: faq.ques,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.ans,
+      },
+    })),
+  };
 
 
 

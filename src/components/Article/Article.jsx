@@ -5,6 +5,11 @@ const Article = ({ data }) => {
   return (
     <div>
       <ArticleHome data={data} />
+
+
+
+
+      {/* hgvcfgvhbjnkmnjbg vhbjkjbhv ghjihbv gbhjhbgv hjihbgv  */}
       <EVPopup data={data} />
     </div>
   );
